@@ -61,6 +61,7 @@ defineProps({
 
 .data-table thead {
   background: #0066b3;
+  border-bottom: 2px solid white;
 }
 
 .data-table th {
@@ -73,9 +74,29 @@ defineProps({
 
 .data-table td {
   padding: 0.25rem 0.5rem;
-  border: 1px solid #ddd;
   vertical-align: top;
   color: #333;
+  border: none;
+}
+
+.data-table tbody tr:nth-child(odd) {
+  background: #f8f9fa;
+}
+
+.data-table tbody tr:nth-child(even) {
+  background: white;
+}
+
+.table-caption {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #666;
+  text-align: center;
+}
+
+.table-caption :deep(sup) {
+  font-size: 0.7em;
+  vertical-align: super;
 }
 
 .data-table tbody tr:nth-child(odd) {
