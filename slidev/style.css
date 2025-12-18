@@ -1,0 +1,17 @@
+.slidev-layout {
+  color: #000000 !important;
+}
+
+.slidev-layout p,
+.slidev-layout li,
+.slidev-layout span,
+.slidev-layout div {
+  color: #000000 !important;
+}
+
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3,
+.slidev-layout h4 {
+  color: #003978 !important;
+}

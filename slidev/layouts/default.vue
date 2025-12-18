@@ -1,5 +1,10 @@
+<script setup>
+import FootnoteList from '../components/footnote/List.vue'
+</script>
+
 <template>
   <div class="h-full flex flex-col px-8 py-4 bg-white relative">
+    <!-- Header -->
     <div class="flex justify-between items-start mb-1">
       <div class="flex-1 mt-2">
         <h1 class="text-4xl font-extrabold text-[#003978] m-0 leading-tight">
@@ -10,7 +15,7 @@
         </p>
       </div>
         
-      <div class="ml-8">
+      <div class="ml-8 -mr-1">
         <img 
           src="/images/fh-logo.jpg" 
           alt="FH Münster" 
@@ -18,11 +23,20 @@
         />
       </div>
     </div>
-    
-    <div class="flex-1 overflow-auto">
+
+    <!-- Content -->
+    <div class="flex-1">
       <slot />
     </div>
+
+    <!-- Fußnoten -->
+    <FootnoteList 
+      v-if="$frontmatter.footnotes" 
+      :items="$frontmatter.footnotes" 
+      :dividerLength="100" 
+    />
     
+    <!-- Footer -->
     <div class="flex justify-between items-center py-1.75 px-8 -mx-8 -mb-4 mt-4 bg-gradient-to-r from-[#002855] to-[#003366]">
       <div class="text-[#D9D9D9] text-[11px]">
         <span v-if="$frontmatter.presentation">{{ $frontmatter.presentation }}</span>
@@ -35,6 +49,3 @@
     </div>
   </div>
 </template>
-
-<style scoped>
-</style>
