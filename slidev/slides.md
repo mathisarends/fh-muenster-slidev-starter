@@ -49,14 +49,43 @@ source: https://www.geeksforgeeks.org/dbms/types-of-nosql-databases/
 <BulletedList title="Anmerkungen">
   <li>
     Es beschreibt die konkrete Erledigung einer Aufgabe am <span class="highlight">zukünftigen</span> System aus der Perspektive des Benutzers
-    <span class="subtext">Technische Aspekte des interaktiven Systems bleiben außen vor</span>
+    <SubText>Technische Aspekte des interaktiven Systems bleiben außen vor</SubText>
   </li>
   <li>
     Typische Darlegungsformen: Narrative Form, Storyboard
-    <span class="subtext">Zur Veranschaulichung von Nutzungsszenarien können zudem <span class="highlight">User Journey Maps</span> dienen</span>
+    <SubText>Zur Veranschaulichung von Nutzungsszenarien können zudem <span class="highlight">User Journey Maps</span> dienen</SubText>
   </li>
 </BulletedList>
 
+---
+layout: default
+title: Text Komponente Demo
+subtitle: Mit SubText Beispielen
+chapter: Test
+presentation: MongoDB und Redis im Big-Data Kontext
+---
+
+<Text title="Text Komponente">
+  Dies ist ein normaler Text mit der <span class="highlight">highlight</span> Klasse für wichtige Begriffe.
+  <SubText>Dies ist ein SubText, der zusätzliche Informationen liefert und in grauer Farbe dargestellt wird.</SubText>
+</Text>
+
+<Text title="Weiteres Beispiel">
+  Die <span class="highlight">Text-Komponente</span> folgt dem gleichen Pattern wie BulletedList.
+  <SubText>Sie unterstützt auch <span class="highlight">Highlights</span> innerhalb des SubTexts für besondere Hervorhebungen.</SubText>
+</Text>
+
+---
+layout: default
+title: HighlightBox Demo
+subtitle: Hervorgehobene Infoboxen
+chapter: Test
+presentation: MongoDB und Redis im Big-Data Kontext
+---
+
+<HighlightBox title="Farbwiedergabe">
+  Ausgabegeräte können nur einen Ausschnitt eines Farbraums darstellen, den sog. Gamut. Die Wiedergabe einer Farbe kann zudem von Gerät zu Gerät variieren (z. B. IPS vs. OLED-Panel).
+</HighlightBox>
 
 
 ---

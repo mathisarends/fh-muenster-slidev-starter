@@ -54,6 +54,7 @@ defineProps({
   display: inline;
 }
 
+/* SubText styles are now handled by the SubText component */
 .bulleted-list :deep(.subtext) {
   display: block;
   width: 100%;
