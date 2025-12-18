@@ -1,4 +1,6 @@
 <script setup>
+import SectionTitle from './SectionTitle.vue'
+
 defineProps({
   title: {
     type: String,
@@ -8,14 +10,10 @@ defineProps({
 </script>
 
 <template>
-  <div class="bulleted-list my-4">
-    <!-- Titel mit Unterstrich -->
-    <h3 v-if="title" class="text-[#0066b3] text-lg font-medium mb-3 underline decoration-1 underline-offset-4">
-      {{ title }}
-    </h3>
+  <div class="bulleted-list">
+    <SectionTitle v-if="title" :text="title" mb="1" />
     
-    <!-- Bullet Items -->
-    <ul class="list-none pl-0 space-y-3">
+    <ul class="list-none pl-0 space-y-1.5">
       <slot />
     </ul>
   </div>
@@ -26,32 +24,42 @@ defineProps({
   position: relative;
   padding-left: 1.25rem;
   color: #333;
+  line-height: 1.4;
+  font-size: 0.95rem;
+  margin: 0;
 }
 
 .bulleted-list :deep(li)::before {
-  content: "▪";
+  content: "■";
   position: absolute;
   left: 0;
-  color: #333;
-  font-size: 0.8em;
+  top: 0.2rem;
+  color: #0066b3;
+  font-size: 0.35em;
 }
 
-/* Haupttext */
-.bulleted-list :deep(li > span),
-.bulleted-list :deep(li > p) {
+.bulleted-list :deep(li) {
   display: block;
 }
 
-/* Orange hervorgehobene Begriffe */
+.bulleted-list :deep(li)::before {
+  flex-shrink: 0;
+  margin-right: 0.5rem;
+  margin-top: 0.15rem;
+}
+
 .bulleted-list :deep(.highlight) {
   color: #e67e00;
+  font-weight: 600;
+  display: inline;
 }
 
-/* Grauer Subtext */
 .bulleted-list :deep(.subtext) {
   display: block;
+  width: 100%;
   color: #888;
-  font-size: 0.9em;
-  margin-top: 0.15rem;
+  font-size: 0.85rem;
+  margin-top: 0.1rem;
+  line-height: 1.3;
 }
 </style>
