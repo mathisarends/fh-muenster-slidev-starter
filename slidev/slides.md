@@ -89,6 +89,28 @@ presentation: MongoDB und Redis im Big-Data Kontext
 
 ---
 layout: default
+title: Image Komponente Demo
+subtitle: Mit Caption und Source
+chapter: Test
+presentation: MongoDB und Redis im Big-Data Kontext
+---
+
+<Image 
+  title="Ionic Framework Beispiel"
+  src="/images/fh-logo.jpg"
+  alt="FH Münster Logo"
+  caption="Jedes <ion-item>-Element ist ein Listeneintrag (Zeile); es kann mehrere UI-Elemente zu einem Listeneintrag bündeln"
+  source="Quelle: FH Münster"
+  maxWidth="500px"
+/>
+
+<Text title="Image Features">
+  Die Image-Komponente unterstützt <span class="highlight">Titel</span>, <span class="highlight">Caption</span> und <span class="highlight">Source</span>.
+  <SubText>Perfekt für annotierte Bilder in Präsentationen</SubText>
+</Text>
+
+---
+layout: default
 title: Code Komponente Demo
 subtitle: Mit Syntax-Highlighting
 chapter: Test
