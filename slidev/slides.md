@@ -87,6 +87,81 @@ presentation: MongoDB und Redis im Big-Data Kontext
   Ausgabegeräte können nur einen Ausschnitt eines Farbraums darstellen, den sog. Gamut. Die Wiedergabe einer Farbe kann zudem von Gerät zu Gerät variieren (z. B. IPS vs. OLED-Panel).
 </HighlightBox>
 
+---
+layout: default
+title: Code Komponente Demo
+subtitle: Mit Syntax-Highlighting
+chapter: Test
+presentation: MongoDB und Redis im Big-Data Kontext
+---
+
+<Code title="TypeScript Beispiel">
+
+```typescript
+import { IonButton } from '@ionic/core/components/ion-button.js';
+import { IonIcon } from 'ionicons/components/ion-icon.js';
+import { initialize } from '@ionic/core/components';
+import { star } from 'ionicons/icons';
+
+initialize();
+addIcons({ 'star': star });
+customElements.define('ion-button', IonButton);
+customElements.define('ion-icon', IonIcon);
+```
+
+</Code>
+
+<Code title="Vue Template Beispiel">
+
+```vue
+<ion-app>
+  <ion-header>
+    <ion-toolbar><ion-title>Listen</ion-title></ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-list-header>Title</ion-list-header>
+      <ion-item>Non clickable</ion-item>
+      <ion-item button>Clickable</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-app>
+```
+
+</Code>
+
+---
+layout: default
+title: Nativ Slidev Code-Blöcke
+subtitle: Mit Line Highlighting
+chapter: Test
+presentation: MongoDB und Redis im Big-Data Kontext
+---
+
+# Mit Slidev Features
+
+Slidev unterstützt Line Highlighting direkt:
+
+```typescript {2,5-7}
+import { IonButton } from '@ionic/core/components/ion-button.js';
+import { IonIcon } from 'ionicons/components/ion-icon.js';
+import { initialize } from '@ionic/core/components';
+import { star } from 'ionicons/icons';
+
+initialize();
+addIcons({ 'star': star });
+```
+
+<BulletedList title="Slidev Code Features">
+  <li>
+    <span class="highlight">Line Highlighting</span>: Mit {2,5-7} Syntax
+    <SubText>Hebt bestimmte Zeilen hervor</SubText>
+  </li>
+  <li>
+    <span class="highlight">Shiki Syntax</span>: Automatisches Highlighting
+    <SubText>Unterstützt alle gängigen Sprachen</SubText>
+  </li>
+</BulletedList>
 
 ---
 layout: cover
