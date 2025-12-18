@@ -17,7 +17,10 @@ defineProps({
   <div class="code-component">
     <SectionTitle v-if="title" :text="title" mb="2" />
     <div class="code-wrapper">
-      <slot />
+      <div class="side-bar"></div>
+      <div class="code-content">
+        <slot />
+      </div>
     </div>
   </div>
 </template>
@@ -28,21 +31,53 @@ defineProps({
 }
 
 .code-wrapper {
-  background: #f8f9fa;
-  border: 1px solid #e1e4e8;
-  border-radius: 6px;
+  display: flex;
+  background: #f5f5f5;
+  border: 1px solid #f5f5f5;
   overflow: hidden;
 }
 
-.code-wrapper :deep(pre) {
+.side-bar {
+  width: 4px;
+  background: #0066b3;
+  flex-shrink: 0;
+}
+
+.code-content {
+  flex: 1;
+}
+
+.code-content :deep(pre) {
   margin: 0 !important;
-  padding: 1rem !important;
-  background: #f8f9fa !important;
+  padding: 0.25rem 1rem !important;
+  background: #f5f5f5 !important;
   font-size: 0.85rem;
   line-height: 1.5;
 }
 
-.code-wrapper :deep(code) {
+.code-content :deep(code) {
   font-family: 'Fira Code', monospace;
+}
+
+.code-content :deep(.token.keyword) {
+  color: #0066b3 !important;
+  font-weight: 600;
+}
+
+.code-content :deep(.token.string) {
+  color: #c7254e !important;
+}
+
+.code-content :deep(.token.function) {
+  color: #d97706 !important;
+}
+
+.code-content :deep(.token.comment) {
+  color: #6c757d !important;
+  font-style: italic;
+}
+
+.code-content :deep(.token.punctuation) {
+  color: #333 !important;
 }
 </style>

@@ -6,7 +6,7 @@ import FootnoteList from './footnote/List.vue'
 </script>
 
 <template>
-  <div class="h-full flex flex-col px-8 py-4 bg-white relative">
+  <div class="h-full flex flex-col px-8 pt-4 pb-4 bg-white relative">
     <div class="flex justify-between items-start mb-1">
       <Title 
         :title="$frontmatter.title || 'Grundlegende Begriffe'" 

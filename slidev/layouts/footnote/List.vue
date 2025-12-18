@@ -15,9 +15,9 @@ defineProps({
 </script>
 
 <template>
-  <div class="footnote-list mt-4">
+  <div class="footnote-list mt-2">
     <Divider :length="dividerLength" class="mb-2" />
-    <div class="space-y-1">
+    <div class="space-y-0.5">
       <Item 
         v-for="(item, index) in items" 
         :key="index"
