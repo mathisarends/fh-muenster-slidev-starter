@@ -1,6 +1,6 @@
 <script setup>
 import Item from './Item.vue'
-import Divider from '../Divider.vue'
+import Divider from '../../components/Divider.vue'
 
 defineProps({
   items: {
