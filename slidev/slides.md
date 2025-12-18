@@ -89,6 +89,33 @@ presentation: MongoDB und Redis im Big-Data Kontext
 
 ---
 layout: default
+title: Table Komponente Demo
+subtitle: Mit alternierenden Zeilen
+chapter: Test
+presentation: MongoDB und Redis im Big-Data Kontext
+---
+
+<Table 
+  :headers="['Auszug aus dem Ist-Szenario', 'Identifizierte Erfordernisse']"
+  :rows="[
+    [
+      'Patienten müssen oft über den vereinbarten Termin hinaus auf ihre Behandlung warten. Das Warten ist für die Patienten sehr ärgerlich, vor allem, wenn sie bis zu 90 Minuten im Wartezimmer sitzen müssen, ohne dass klar ist, wie lange es noch dauert, bis sie an der Reihe sind.',
+      'Der Patient (Benutzergruppe) muss vor Ankunft in der Arztpraxis wissen, wann der vereinbarte Behandlungstermin tatsächlich beginnt (Information), um die verbleibende Zeit sinnvoll nutzen zu können (beabsichtigtes Ergebnis).'
+    ],
+    [
+      'Die Patienten vereinbaren ihre Termine oft lange im Voraus, da gute Ärzte nicht kurzfristig verfügbar sind.',
+      'Der Patient (Benutzergruppe) muss einen vereinbarten Behandlungstermin haben (Ressource), um zum vereinbarten Zeitpunkt behandelt zu werden (beabsichtigtes Ergebnis).'
+    ],
+    [
+      'Allgemeinmediziner haben es mit einer großen Vielfalt von Krankheiten zu tun. Sie stellen Diagnosen jedoch schnell, und die Patienten verlassen sich auf die von ihnen verschriebenen Behandlungen.',
+      'Der Arzt (Benutzergruppe) muss die Kompetenz besitzen, die richtige Diagnose zu stellen (Kompetenz), um die richtige Therapie zu bestimmen (beabsichtigtes Ergebnis).'
+    ]
+  ]"
+  caption="Beispiele für identifizierte Erfordernisse in Nutzungskontextinformationen<sup>1</sup>"
+/>
+
+---
+layout: default
 title: Image Komponente Demo
 subtitle: Mit Caption und Source
 chapter: Test
@@ -184,6 +211,42 @@ addIcons({ 'star': star });
     <SubText>Unterstützt alle gängigen Sprachen</SubText>
   </li>
 </BulletedList>
+
+---
+layout: default
+title: Quellen
+subtitle: Literaturverzeichnis
+chapter: Test
+presentation: MongoDB und Redis im Big-Data Kontext
+---
+
+<CitationTable 
+  title="Quellen"
+  :citations="[
+    { id: '[GeT23]', text: 'Geis, T.; Tesch, G.: <em>Basiswissen Usability und User Experience.</em> 2. Aufl., dpunkt.verlag, 2023' },
+    { id: '[GeP18]', text: 'Geis, T.; Polkehn, K.: <em>Praxiswissen User Requirements.</em> dpunkt.verlag, 2018' },
+    { id: '[UXQ21]', text: 'UXQB e. V.: <em>CPUX-DS Curriculum und Glossar.</em> Version 1.01a DE, www.uxqb.org, 2021' },
+    { id: '[UXQ23a]', text: 'UXQB e. V.: <em>CPUX-F Curriculum - Certified Professional for Usability and User Experience Foundation Level.</em> Version 4.01 DE, www.uxqb.org, 2023' },
+    { id: '[UXQ23b]', text: 'UXQB e. V.: <em>CPUX-UR Curriculum - Certified Professional for Usability and User Experience \u2013 User Requirements Engineering.</em> Version 3.2.2 DE, www.uxqb.org, 2023' }
+  ]"
+/>
+
+---
+layout: default
+title: Quellen
+subtitle: Normen und Standards
+chapter: Test
+presentation: MongoDB und Redis im Big-Data Kontext
+---
+
+<CitationTable 
+  title="Normen"
+  :citations="[
+    { id: 'DIN EN ISO 9241-11:2018', text: 'Ergonomie der Mensch-System-Interaktion \u2013 Teil 11: Gebrauchstauglichkeit: Begriffe und Konzepte (ISO 9241-11:2018); Deutsche Fassung EN ISO 9241-11:2018, November 2018' },
+    { id: 'DIN EN ISO 9241-110:2020', text: 'Ergonomie der Mensch-System-Interaktion \u2013 Teil 110: Interaktionsprinzipien (ISO 9241-110:2020); Deutsche Fassung EN ISO 9241-110:2020, Oktober 2020' },
+    { id: 'DIN EN ISO 9241-210:2020', text: 'Ergonomie der Mensch-System-Interaktion \u2013 Teil 210: Menschzentrierte Gestaltung interaktiver Systeme (ISO 9241-210:2019); Deutsche Fassung EN ISO 9241-210:2019, M\u00e4rz 2020' }
+  ]"
+/>
 
 ---
 layout: cover

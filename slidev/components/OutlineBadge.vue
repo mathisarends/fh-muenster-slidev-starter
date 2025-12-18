@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#003978] text-white font-semibold text-sm flex-shrink-0">
+  <div class="inline-flex items-center justify-center w-5.5 h-5.5 rounded-full bg-[#003978] text-white font-semibold text-sm flex-shrink-0">
     {{ number }}
   </div>
 </template>
