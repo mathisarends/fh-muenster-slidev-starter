@@ -18,8 +18,6 @@ footnotes:
   - "Bildquelle: Eigene Darstellung (erstellt mit Mermaid.js)"
 ---
 
-das ist ein test
-
 <Outline>
   <OutlineItem :number="1">Einführung</OutlineItem>
   <OutlineItem :number="2">Konzeptuelle Modellierung</OutlineItem>
@@ -56,7 +54,6 @@ source: https://www.geeksforgeeks.org/dbms/types-of-nosql-databases/
     <SubText>Zur Veranschaulichung von Nutzungsszenarien können zudem <span class="highlight">User Journey Maps</span> dienen</SubText>
   </li>
 </BulletedList>
-
 ---
 layout: default
 title: Text Komponente Demo
@@ -64,6 +61,8 @@ subtitle: Mit SubText Beispielen
 chapter: Test
 presentation: MongoDB und Redis im Big-Data Kontext
 ---
+
+<Columns>
 
 <Text title="Text Komponente">
   Dies ist ein normaler Text mit der <span class="highlight">highlight</span> Klasse für wichtige Begriffe.
@@ -74,6 +73,8 @@ presentation: MongoDB und Redis im Big-Data Kontext
   Die <span class="highlight">Text-Komponente</span> folgt dem gleichen Pattern wie BulletedList.
   <SubText>Sie unterstützt auch <span class="highlight">Highlights</span> innerhalb des SubTexts für besondere Hervorhebungen.</SubText>
 </Text>
+
+</Columns>
 
 ---
 layout: default
@@ -122,6 +123,8 @@ chapter: Test
 presentation: MongoDB und Redis im Big-Data Kontext
 ---
 
+<StackedLayout>
+
 <Image 
   title="Ionic Framework Beispiel"
   src="/images/fh-logo.jpg"
@@ -136,6 +139,8 @@ presentation: MongoDB und Redis im Big-Data Kontext
   <SubText>Perfekt für annotierte Bilder in Präsentationen</SubText>
 </Text>
 
+</StackedLayout>
+
 ---
 layout: default
 title: Code Komponente Demo
@@ -143,6 +148,10 @@ subtitle: Mit Syntax-Highlighting
 chapter: Test
 presentation: MongoDB und Redis im Big-Data Kontext
 ---
+
+<StackedLayout>
+
+<Columns>
 
 <Code title="TypeScript Beispiel">
 
@@ -178,6 +187,10 @@ customElements.define('ion-icon', IonIcon);
 ```
 
 </Code>
+
+</Columns>
+
+</StackedLayout>
 
 ---
 layout: default
@@ -247,6 +260,85 @@ presentation: MongoDB und Redis im Big-Data Kontext
     { id: 'DIN EN ISO 9241-210:2020', text: 'Ergonomie der Mensch-System-Interaktion \u2013 Teil 210: Menschzentrierte Gestaltung interaktiver Systeme (ISO 9241-210:2019); Deutsche Fassung EN ISO 9241-210:2019, M\u00e4rz 2020' }
   ]"
 />
+
+---
+layout: default
+title: Mermaid Diagramm Demo
+subtitle: Visualisierung mit Mermaid.js
+chapter: Test
+presentation: MongoDB und Redis im Big-Data Kontext
+---
+
+<StackedLayout>
+
+```mermaid
+graph LR
+    A[Client/Browser] -->|HTTP Request| B[Web Server]
+    B -->|API Call| C[Application Server]
+    C -->|Query| D[(MongoDB)]
+    C -->|Cache| E[(Redis)]
+    D -->|Data| C
+    E -->|Cached Data| C
+    C -->|Response| B
+    B -->|HTML/JSON| A
+    
+    style A fill:#e1f5ff
+    style B fill:#fff4e1
+    style C fill:#ffe1f5
+    style D fill:#e1ffe1
+    style E fill:#ffe1e1
+```
+
+<BulletedList title="Vorteile von Mermaid">
+  <li>
+    <span class="highlight">Einfache Syntax</span> zur Diagrammerstellung
+    <SubText>Diagramme werden aus Text generiert und sind versionierbar</SubText>
+  </li>
+  <li>
+    <span class="highlight">Verschiedene Diagrammtypen</span> unterstützt
+    <SubText>Flowcharts, Sequence Diagrams, Class Diagrams, etc.</SubText>
+  </li>
+</BulletedList>
+
+</StackedLayout>
+
+---
+layout: default
+title: PlantUML Diagramm Demo
+subtitle: UML-Diagramme mit PlantUML
+chapter: Test
+presentation: MongoDB und Redis im Big-Data Kontext
+---
+
+<StackedLayout>
+
+```plantuml
+@startuml
+actor Benutzer
+participant "Web App" as App
+participant "Auth Service" as Auth
+database "User DB" as DB
+
+Benutzer -> App: Login Request
+App -> Auth: Validate Credentials
+Auth -> DB: Query User
+DB --> Auth: User Data
+Auth --> App: JWT Token
+App --> Benutzer: Login Success
+
+Benutzer -> App: API Request + Token
+App -> Auth: Verify Token
+Auth --> App: Token Valid
+App --> Benutzer: Protected Resource
+@enduml
+```
+
+<Text title="Anwendungsfälle">
+  PlantUML eignet sich besonders für <span class="highlight">UML-Diagramme</span> und technische Dokumentation.
+  <SubText>Ideal für Sequenzdiagramme, Klassendiagramme und Komponentendiagramme</SubText>
+</Text>
+
+</StackedLayout>
 
 ---
 layout: cover

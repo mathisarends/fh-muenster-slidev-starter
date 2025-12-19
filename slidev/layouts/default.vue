@@ -15,8 +15,8 @@ import FootnoteList from './footnote/List.vue'
       <Logo />
     </div>
 
-    <div class="flex-1">
-      <slot />
+    <div class="flex-1 py-3.5 space-y-3.5">
+        <slot />
     </div>
 
     <FootnoteList 
