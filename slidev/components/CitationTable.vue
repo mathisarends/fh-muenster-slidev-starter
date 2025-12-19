@@ -4,78 +4,41 @@ import SectionTitle from '@components/SectionTitle.vue'
 defineProps({
   title: {
     type: String,
-    default: 'Quellen'
+    default: ''
   },
   citations: {
     type: Array,
     default: () => []
-    // Format: [{ id: '[GeT23]', text: 'Geis, T.; Tesch, G.: Basiswissen...' }]
+  },
+  idWidth: {
+    type: String,
+    default: '100px'
   }
 })
 </script>
 
 <template>
-  <div class="citation-table">
-    <div class="orange-bar"></div>
-    <div class="content">
-      <SectionTitle :text="title" />
+  <SectionTitle v-if="title" :text="title" class="mb-2" />
 
-      <div class="citations">
-        <div v-for="(citation, index) in citations" :key="index" class="citation-item">
-          <div class="citation-id">{{ citation.id }}</div>
-          <div class="citation-text" v-html="citation.text"></div>
-        </div>
-        <slot />
-      </div>
+  <div class="h-0.5 bg-fh-dark-blue mb-0"></div>
+
+  <div class="flex flex-col">
+    <div
+      v-for="(citation, index) in citations"
+      :key="index"
+      class="grid gap-4 text-sm leading-relaxed py-2 px-2"
+      :class="index % 2 === 0 ? 'bg-blue-50' : 'bg-white'"
+      :style="{ gridTemplateColumns: idWidth + ' 1fr' }"
+    >
+      <div class="text-gray-700 font-medium">{{ citation.id }}</div>
+      <div class="text-gray-700" v-html="citation.text"></div>
     </div>
+    <slot />
   </div>
 </template>
 
 <style scoped>
-.citation-table {
-  margin-top: 2rem;
-}
-
-.orange-bar {
-  height: 3px;
-  background: #ff8c00;
-  margin-bottom: 0.75rem;
-}
-
-.content {
-  /* No extra padding needed */
-}
-
-.citations {
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.citation-item {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1rem;
-  font-size: 0.8rem;
-  line-height: 1.4;
-}
-
-.citation-id {
-  color: #333;
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-.citation-text {
-  color: #333;
-}
-
-.citation-text :deep(em) {
+:deep(em) {
   font-style: italic;
-}
-
-.citation-text :deep(strong) {
-  font-weight: 600;
 }
 </style>

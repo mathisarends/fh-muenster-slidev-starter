@@ -18,14 +18,11 @@ defineProps({
       {{ title }}
     </div>
 
-    <!-- Content Box -->
     <div class="bg-gray-100 border-l-4 border-fh-blue -mt-0.5 px-2.5 py-2">
-      <!-- Text -->
       <p class="text-gray-600 text-[0.95rem] italic leading-relaxed m-0">
         <slot />
       </p>
 
-      <!-- Source -->
       <div v-if="source" class="text-right mt-2">
         <span class="text-gray-400 text-xs">{{ source }}</span>
       </div>

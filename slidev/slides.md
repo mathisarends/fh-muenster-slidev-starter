@@ -56,6 +56,37 @@ presentation: MongoDB und Redis im Big-Data Kontext
 
 ---
 layout: default
+title: Numbered List Demo
+subtitle: Nummerierte Listen mit Tailwind
+chapter: Test
+presentation: MongoDB und Redis im Big-Data Kontext
+---
+
+<StackedLayout>
+
+<NumberedList title="Schritte zur Benutzerforschung">
+  <li>
+    <span><span class="highlight">Zielgruppe definieren</span> - Bestimmen Sie, wer Ihre Zielbenutzer sind</span>
+    <SubText>Berücksichtigen Sie demografische, psychologische und Verhaltensmerkmale</SubText>
+  </li>
+  <li>
+    <span><span class="highlight">Forschungsmethoden wählen</span> - Interviews, Umfragen, Beobachtungen</span>
+    <SubText>Kombinieren Sie qualitative und quantitative Methoden für umfassende Erkenntnisse</SubText>
+  </li>
+  <li>
+    <span><span class="highlight">Daten sammeln und analysieren</span> - Führen Sie systematisch Daten ein</span>
+    <SubText>Identifizieren Sie Muster, Bedürfnisse und Schmerzpunkte in den Benutzerdaten</SubText>
+  </li>
+  <li>
+    <span><span class="highlight">Personas erstellen</span> - Entwickeln Sie detaillierte Benutzerprofile</span>
+    <SubText>Dokumentieren Sie Ziele, Aufgaben und Herausforderungen der einzelnen Persona-Typen</SubText>
+  </li>
+</NumberedList>
+
+</StackedLayout>
+
+---
+layout: default
 title: Checkliste für die Beschreibung von Benutzermerkmalen
 subtitle: Nested BulletedList Demo
 chapter: Test
@@ -181,6 +212,7 @@ presentation: MongoDB und Redis im Big-Data Kontext
 
 <Table 
   :headers="['Auszug aus dem Ist-Szenario', 'Identifizierte Erfordernisse']"
+  :columnWidths="['50%', '50%']"
   :rows="[
     [
       'Patienten müssen oft über den vereinbarten Termin hinaus auf ihre Behandlung warten. Das Warten ist für die Patienten sehr ärgerlich, vor allem, wenn sie bis zu 90 Minuten im Wartezimmer sitzen müssen, ohne dass klar ist, wie lange es noch dauert, bis sie an der Reihe sind.',
@@ -316,16 +348,18 @@ chapter: Test
 presentation: MongoDB und Redis im Big-Data Kontext
 ---
 
-<CitationTable 
-  title="Quellen"
-  :citations="[
-    { id: '[GeT23]', text: 'Geis, T.; Tesch, G.: <em>Basiswissen Usability und User Experience.</em> 2. Aufl., dpunkt.verlag, 2023' },
-    { id: '[GeP18]', text: 'Geis, T.; Polkehn, K.: <em>Praxiswissen User Requirements.</em> dpunkt.verlag, 2018' },
-    { id: '[UXQ21]', text: 'UXQB e. V.: <em>CPUX-DS Curriculum und Glossar.</em> Version 1.01a DE, www.uxqb.org, 2021' },
-    { id: '[UXQ23a]', text: 'UXQB e. V.: <em>CPUX-F Curriculum - Certified Professional for Usability and User Experience Foundation Level.</em> Version 4.01 DE, www.uxqb.org, 2023' },
-    { id: '[UXQ23b]', text: 'UXQB e. V.: <em>CPUX-UR Curriculum - Certified Professional for Usability and User Experience \u2013 User Requirements Engineering.</em> Version 3.2.2 DE, www.uxqb.org, 2023' }
-  ]"
-/>
+<Container>
+  <CitationTable 
+    title="Quellen"
+    :citations="[
+      { id: '[GeT23]', text: 'Geis, T.; Tesch, G.: <em>Basiswissen Usability und User Experience.</em> 2. Aufl., dpunkt.verlag, 2023' },
+      { id: '[GeP18]', text: 'Geis, T.; Polkehn, K.: <em>Praxiswissen User Requirements.</em> dpunkt.verlag, 2018' },
+      { id: '[UXQ21]', text: 'UXQB e. V.: <em>CPUX-DS Curriculum und Glossar.</em> Version 1.01a DE, www.uxqb.org, 2021' },
+      { id: '[UXQ23a]', text: 'UXQB e. V.: <em>CPUX-F Curriculum - Certified Professional for Usability and User Experience Foundation Level.</em> Version 4.01 DE, www.uxqb.org, 2023' },
+      { id: '[UXQ23b]', text: 'UXQB e. V.: <em>CPUX-UR Curriculum - Certified Professional for Usability and User Experience \u2013 User Requirements Engineering.</em> Version 3.2.2 DE, www.uxqb.org, 2023' }
+    ]"
+  />
+</Container>
 
 ---
 layout: default
