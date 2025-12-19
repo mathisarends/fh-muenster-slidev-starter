@@ -60,7 +60,7 @@ defineProps({
 }
 
 .data-table thead {
-  background: #0066b3;
+  background: var(--fh-blue, #0066b3);
   border-bottom: 2px solid white;
 }
 

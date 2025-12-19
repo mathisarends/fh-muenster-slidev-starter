@@ -19,9 +19,9 @@ defineProps({
   <div 
     class="inline-flex items-center justify-center w-5 h-5 rounded-full font-semibold text-sm flex-shrink-0"
     :class="{
-      'bg-[#f79646] text-white': active,
+      'bg-fh-orange text-white': active,
       'bg-gray-300 text-white': disabled,
-      'bg-[#003978] text-white': !active && !disabled
+      'bg-fh-dark-blue text-white': !active && !disabled
     }"
   >
     {{ number }}

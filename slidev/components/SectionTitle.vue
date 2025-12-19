@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-  <h3 class="text-[#0066b3] text-xl font-medium">
+  <h3 class="text-fh-blue text-xl font-medium">
     <slot>{{ text }}</slot>
   </h3>
 </template>3

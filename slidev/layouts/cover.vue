@@ -16,11 +16,11 @@ defineProps({
       </div>
 
       <div class="flex-1 flex flex-col justify-center pb-9">
-        <h1 class="text-5xl font-bold text-[#0066b3] leading-snug mb-2">
+        <h1 class="text-5xl font-bold text-fh-blue leading-snug mb-2">
           {{ title || $frontmatter.title }}
         </h1>
         
-        <h2 class="text-3xl font-semibold text-[#0066b3] mb-4">
+        <h2 class="text-3xl font-semibold text-fh-blue mb-4">
           {{ subtitle || $frontmatter.subtitle }}
         </h2>
         

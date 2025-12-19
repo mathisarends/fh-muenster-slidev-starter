@@ -39,7 +39,7 @@ defineProps({
 
 .side-bar {
   width: 4px;
-  background: #0066b3;
+  background: var(--fh-blue, #0066b3);
   flex-shrink: 0;
 }
 
@@ -60,7 +60,7 @@ defineProps({
 }
 
 .code-content :deep(.token.keyword) {
-  color: #0066b3 !important;
+  color: var(--fh-blue, #0066b3) !important;
   font-weight: 600;
 }
 

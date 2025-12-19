@@ -23,9 +23,9 @@ defineProps({
     <span 
       class="text-lg font-medium leading-tight"
       :class="{
-        'text-[#f79646]': active,
+        'text-fh-orange': active,
         'text-gray-400': disabled,
-        'text-[#003978]': !active && !disabled
+        'text-fh-dark-blue': !active && !disabled
       }"
     >
       <slot />

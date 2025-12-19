@@ -34,7 +34,7 @@ defineProps({
   position: absolute;
   left: 0;
   top: 0.2rem;
-  color: #0066b3;
+  color: var(--fh-blue, #0066b3);
   font-size: 0.35em;
 }
 
@@ -49,7 +49,7 @@ defineProps({
 }
 
 .bulleted-list :deep(.highlight) {
-  color: #e67e00;
+  color: var(--fh-orange, #f79646);
   font-weight: 600;
   display: inline;
 }
