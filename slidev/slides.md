@@ -7,6 +7,23 @@ fonts:
 ---
 
 ---
+layout: cover
+title: Scientific Computing
+subtitle: Kapitel 3
+semester: Wintersemester 2025/26
+authors:
+  - name: Leon Licher
+    matrikelnummer: 1233258
+    email: ll609274@fh-muenster.de
+  - name: Daniel Fischer
+    matrikelnummer: 1255216
+    email: df094981@fh-muenster.de
+  - name: Mathis Arends
+    matrikelnummer: 1241877
+    email: ma197404@fh-muenster.de
+---
+
+---
 layout: default
 title: NoSQL
 subtitle: Relevanz im Big-Data Kontext
@@ -19,14 +36,10 @@ footnotes:
 ---
 
 <Outline>
-  <OutlineItem :number="1">Einführung</OutlineItem>
-  <OutlineItem :number="2">Konzeptuelle Modellierung</OutlineItem>
-  <OutlineItem :number="3">Informationsarchitektur</OutlineItem>
-  <OutlineItem :number="4">Interaktionsdesign</OutlineItem>
-  <OutlineItem :number="5">Interfacedesign</OutlineItem>
-  <OutlineItem :number="6" active>Informationsdesign</OutlineItem>
-  <OutlineItem :number="7" disabled>Sensorisches Design</OutlineItem>
-  <OutlineItem :number="8" disabled>Gestaltungsrichtlinien</OutlineItem>
+  <OutlineItem :number="1">Einordnung und grundlegende Begriffe</OutlineItem>
+  <OutlineItem :number="2">Menschzentrierte Gestaltung</OutlineItem>
+  <OutlineItem :number="3" active>Verstehen und Festlegen des Nutzungskontextes</OutlineItem>
+  <OutlineItem :number="4" disabled>Festlegen der Nutzungsanforderungen</OutlineItem>
 </Outline>
 
 ---

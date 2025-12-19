@@ -1,5 +1,5 @@
 <script setup>
-import SectionTitle from './SectionTitle.vue'
+import SectionTitle from '@components/SectionTitle.vue'
 
 defineProps({
   title: {
@@ -54,7 +54,6 @@ defineProps({
   display: inline;
 }
 
-/* SubText styles are now handled by the SubText component */
 .bulleted-list :deep(.subtext) {
   display: block;
   width: 100%;

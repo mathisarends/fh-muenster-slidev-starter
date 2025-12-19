@@ -1,5 +1,5 @@
 <script setup>
-import SectionTitle from './SectionTitle.vue'
+import SectionTitle from '@components/SectionTitle.vue'
 
 defineProps({
   title: {
@@ -15,7 +15,7 @@ defineProps({
 
 <template>
   <div class="code-component">
-    <SectionTitle v-if="title" :text="title" mb="2" />
+    <SectionTitle v-if="title" :text="title" mb="1" />
     <div class="code-wrapper">
       <div class="side-bar"></div>
       <div class="code-content">

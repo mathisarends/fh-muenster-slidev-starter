@@ -12,5 +12,4 @@ defineProps({
 </template>
 
 <style scoped>
-/* Divider mit konfigurierbarer Länge */
 </style>

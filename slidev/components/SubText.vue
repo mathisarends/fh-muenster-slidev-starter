@@ -1,16 +1,5 @@
 <template>
-  <span class="subtext">
+  <span class="block w-full text-gray-500 text-sm mt-0.5 leading-tight">
     <slot />
   </span>
 </template>
-
-<style scoped>
-.subtext {
-  display: block;
-  width: 100%;
-  color: #888;
-  font-size: 0.85rem;
-  margin-top: 0.1rem;
-  line-height: 1.3;
-}
-</style>
