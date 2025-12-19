@@ -44,6 +44,18 @@ footnotes:
 
 ---
 layout: default
+title: DefinitionBox Demo
+subtitle: Begriffsdefinitionen hervorheben
+chapter: Test
+presentation: MongoDB und Redis im Big-Data Kontext
+---
+
+<DefinitionBox title="Menschzentrierte Gestaltung" source="DIN EN ISO 9241-210:2020-03, S. 9">
+  Die menschzentrierte Gestaltung ist eine "Herangehensweise bei der Gestaltung und Entwicklung von Systemen, die darauf abzielt, interaktive Systeme gebrauchstauglicher zu machen, indem sie sich auf die Verwendung des Systems konzentriert und Kenntnisse und Techniken aus den Bereichen der Arbeitswissenschaft/Ergonomie und der Gebrauchstauglichkeit anwendet".
+</DefinitionBox>
+
+---
+layout: default
 title: Checkliste für die Beschreibung von Benutzermerkmalen
 subtitle: Nested BulletedList Demo
 chapter: Test

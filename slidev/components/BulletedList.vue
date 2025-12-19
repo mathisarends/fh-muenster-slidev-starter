@@ -48,7 +48,7 @@ defineProps({
 .bulleted-list :deep(li > ul > li) {
   padding-left: 1.25rem;
   font-size: 0.9rem;
-  color: #4D4D4D;
+  color: #4d4d4d;
 }
 
 .bulleted-list :deep(li > ul > li)::before {
