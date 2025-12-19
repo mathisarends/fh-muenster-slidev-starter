@@ -44,6 +44,64 @@ footnotes:
 
 ---
 layout: default
+title: Checkliste für die Beschreibung von Benutzermerkmalen
+subtitle: Nested BulletedList Demo
+chapter: Test
+presentation: MongoDB und Redis im Big-Data Kontext
+footnotes:
+  - "Quelle: [UXQ23, S. 42]"
+---
+
+<Columns>
+
+<BulletedList>
+  <li>Demografische Merkmale
+    <ul>
+      <li>Altersbereich</li>
+      <li>Geschlecht</li>
+    </ul>
+  </li>
+  <li>Aufgabenbezogene Merkmale
+    <ul>
+      <li>Wissen über die ausgeführten Aufgaben</li>
+      <li>Fähigkeiten bei der Ausführung der Aufgaben</li>
+      <li>Motivation bei der Ausführung der Aufgaben</li>
+    </ul>
+  </li>
+  <li>Arbeitsorganisatorische Merkmale
+    <ul>
+      <li>Bereitschaft zur Veränderung</li>
+      <li>Risikofreudigkeit</li>
+      <li>Ebene und Rolle innerhalb einer Organisationshierarchie</li>
+      <li>Anweisungsorientiertheit versus Selbstbestimmtheit</li>
+    </ul>
+  </li>
+</BulletedList>
+
+<BulletedList>
+  <li>Psychologische und soziale Merkmale
+    <ul>
+      <li>Kognitive Fähigkeiten, einschließlich Kurzzeitgedächtnis und Reaktionszeiten</li>
+      <li>Kultureller Hintergrund, einschließlich Verhaltensregeln, Denkweisen und Mentalität</li>
+      <li>Sprache(n)</li>
+      <li>Lesefähigkeit</li>
+    </ul>
+  </li>
+  <li>Physische und sensorische Merkmale
+    <ul>
+      <li>Körpergröße</li>
+      <li>Beweglichkeit</li>
+      <li>Haptische Fähigkeiten (z. B. bei der Nutzung von Touchscreens)</li>
+      <li>Seh- und Hörfähigkeit</li>
+      <li>Fingerfertigkeit</li>
+    </ul>
+  </li>
+</BulletedList>
+
+</Columns>
+
+---
+layout: default
 title: NoSQL
 subtitle: Relevanz im Big-Data Kontext
 chapter: Test

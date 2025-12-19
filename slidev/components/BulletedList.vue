@@ -27,6 +27,7 @@ defineProps({
   line-height: 1.4;
   font-size: 0.95rem;
   margin: 0;
+  display: block;
 }
 
 .bulleted-list :deep(li)::before {
@@ -38,14 +39,35 @@ defineProps({
   font-size: 0.35em;
 }
 
-.bulleted-list :deep(li) {
-  display: block;
+.bulleted-list :deep(ul) {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.25rem 0 0.25rem 0;
 }
 
-.bulleted-list :deep(li)::before {
-  flex-shrink: 0;
-  margin-right: 0.5rem;
-  margin-top: 0.15rem;
+.bulleted-list :deep(li > ul > li) {
+  padding-left: 1.25rem;
+  font-size: 0.9rem;
+  color: #4D4D4D;
+}
+
+.bulleted-list :deep(li > ul > li)::before {
+  content: '■';
+  font-size: 0.3em;
+  color: var(--fh-blue, #0066b3);
+}
+
+/* Nested list styling - Level 3 */
+.bulleted-list :deep(li > ul > li > ul > li) {
+  padding-left: 1.25rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.bulleted-list :deep(li > ul > li > ul > li)::before {
+  content: '■';
+  font-size: 0.25em;
+  color: var(--fh-gray, #6b7280);
 }
 
 .bulleted-list :deep(.highlight) {
@@ -59,7 +81,7 @@ defineProps({
   width: 100%;
   color: #888;
   font-size: 0.85rem;
-  margin-top: 0.1rem;
+  margin-top: 0.25rem;
   line-height: 1.3;
 }
 </style>
