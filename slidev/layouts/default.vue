@@ -8,28 +8,28 @@ import FootnoteList from './footnote/List.vue'
 <template>
   <div class="h-full flex flex-col px-8 pt-4 pb-4 bg-white relative">
     <div class="flex justify-between items-start mb-1">
-      <Title 
-        :title="$frontmatter.title || 'Grundlegende Begriffe'" 
+      <Title
+        :title="$frontmatter.title || 'Grundlegende Begriffe'"
         :subtitle="$frontmatter.subtitle"
       />
       <Logo />
     </div>
 
     <div class="flex-1 py-3.5 space-y-3.5">
-        <slot />
+      <slot />
     </div>
 
-    <FootnoteList 
-      v-if="$frontmatter.footnotes" 
-      :items="$frontmatter.footnotes" 
-      :dividerLength="100" 
+    <FootnoteList
+      v-if="$frontmatter.footnotes"
+      :items="$frontmatter.footnotes"
+      :divider-length="100"
     />
-    
-    <Footer 
+
+    <Footer
       :presentation="$frontmatter.presentation"
       :chapter="$frontmatter.chapter"
       :section="$frontmatter.section"
-      :currentPage="$slidev.nav.currentPage"
+      :current-page="$slidev.nav.currentPage"
     />
   </div>
 </template>

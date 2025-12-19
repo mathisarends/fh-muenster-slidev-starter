@@ -20,7 +20,7 @@ defineProps({
 <template>
   <div class="flex items-center gap-2.5 py-1">
     <OutlineBadge :number="number" :active="active" :disabled="disabled" />
-    <span 
+    <span
       class="text-lg font-medium leading-tight"
       :class="{
         'text-fh-orange': active,

@@ -12,7 +12,7 @@ defineProps({
 <template>
   <div class="bulleted-list">
     <SectionTitle v-if="title" :text="title" mb="1" />
-    
+
     <ul class="list-none pl-0 space-y-1.5">
       <slot />
     </ul>
@@ -30,7 +30,7 @@ defineProps({
 }
 
 .bulleted-list :deep(li)::before {
-  content: "■";
+  content: '■';
   position: absolute;
   left: 0;
   top: 0.2rem;

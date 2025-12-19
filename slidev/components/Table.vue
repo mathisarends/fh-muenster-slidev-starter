@@ -26,7 +26,7 @@ defineProps({
 <template>
   <div class="table-component">
     <SectionTitle v-if="title" :text="title" mb="2" />
-    
+
     <table class="data-table">
       <thead>
         <tr>
@@ -41,7 +41,7 @@ defineProps({
         </tr>
       </tbody>
     </table>
-    
+
     <p v-if="caption" class="table-caption" v-html="caption"></p>
   </div>
 </template>

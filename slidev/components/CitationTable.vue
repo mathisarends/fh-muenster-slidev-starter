@@ -19,13 +19,9 @@ defineProps({
     <div class="orange-bar"></div>
     <div class="content">
       <SectionTitle :text="title" />
-      
+
       <div class="citations">
-        <div 
-          v-for="(citation, index) in citations" 
-          :key="index"
-          class="citation-item"
-        >
+        <div v-for="(citation, index) in citations" :key="index" class="citation-item">
           <div class="citation-id">{{ citation.id }}</div>
           <div class="citation-text" v-html="citation.text"></div>
         </div>

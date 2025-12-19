@@ -12,7 +12,7 @@ defineProps({
 <template>
   <div class="text-content">
     <SectionTitle v-if="title" :text="title" mb="1" />
-    
+
     <div class="text-wrapper">
       <slot />
     </div>

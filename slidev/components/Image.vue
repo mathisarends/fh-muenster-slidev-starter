@@ -36,15 +36,10 @@ defineProps({
 <template>
   <div class="image-component">
     <SectionTitle v-if="title" :text="title" mb="2" />
-    
+
     <div class="image-wrapper" :style="{ maxWidth: maxWidth }">
-      <img 
-        :src="src" 
-        :alt="alt" 
-        :style="{ width: width }"
-        class="image"
-      />
-      
+      <img :src="src" :alt="alt" :style="{ width: width }" class="image" />
+
       <div v-if="caption || source" class="image-footer">
         <p v-if="caption" class="caption">{{ caption }}</p>
         <p v-if="source" class="source">{{ source }}</p>

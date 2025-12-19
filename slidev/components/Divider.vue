@@ -11,5 +11,4 @@ defineProps({
   <div class="border-t border-gray-300" :style="{ width: length + '%' }"></div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

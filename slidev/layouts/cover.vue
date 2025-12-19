@@ -1,9 +1,21 @@
 <script setup>
 defineProps({
-  title: String,
-  subtitle: String,
-  semester: String,
-  authors: Array
+  title: {
+    type: String,
+    default: ''
+  },
+  subtitle: {
+    type: String,
+    default: ''
+  },
+  semester: {
+    type: String,
+    default: ''
+  },
+  authors: {
+    type: Array,
+    default: () => []
+  }
 })
 </script>
 
@@ -19,11 +31,11 @@ defineProps({
         <h1 class="text-5xl font-bold text-fh-blue leading-snug mb-2">
           {{ title || $frontmatter.title }}
         </h1>
-        
+
         <h2 class="text-3xl font-semibold text-fh-blue mb-4">
           {{ subtitle || $frontmatter.subtitle }}
         </h2>
-        
+
         <p class="text-xl text-gray-400">
           {{ semester || $frontmatter.semester }}
         </p>
@@ -33,7 +45,7 @@ defineProps({
         <div v-for="author in authors || $frontmatter.authors" :key="author.name">
           <p class="text-base font-semibold text-gray-800 mb-0.5">{{ author.name }}</p>
           <p class="text-xs text-gray-600 leading-relaxed">
-            Matrikelnummer: {{ author.matrikelnummer }}<br>
+            Matrikelnummer: {{ author.matrikelnummer }}<br />
             {{ author.email }}
           </p>
         </div>

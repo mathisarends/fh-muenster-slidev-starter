@@ -16,7 +16,7 @@ defineProps({
 </script>
 
 <template>
-  <div 
+  <div
     class="inline-flex items-center justify-center w-5 h-5 rounded-full font-semibold text-sm flex-shrink-0"
     :class="{
       'bg-fh-orange text-white': active,
