@@ -38,18 +38,6 @@ chapter: 1
 ---
 
 ---
-title: NoSQL
-subtitle: Relevanz im Big-Data Kontext
----
-
-<Outline>
-  <OutlineItem :number="1">Einordnung und grundlegende Begriffe</OutlineItem>
-  <OutlineItem :number="2">Menschzentrierte Gestaltung</OutlineItem>
-  <OutlineItem :number="3" active>Verstehen und Festlegen des Nutzungskontextes</OutlineItem>
-  <OutlineItem :number="4" disabled>Festlegen der Nutzungsanforderungen</OutlineItem>
-</Outline>
-
----
 title: DefinitionBox Demo
 subtitle: Begriffsdefinitionen hervorheben
 ---
@@ -394,13 +382,9 @@ App --> Benutzer: Protected Resource
 ---
 title: Quellen
 subtitle: Abbildungen
-highlighter: shiki
-shikiTheme: github-light
 ---
 
 <FigureList title="Abbildungen" idWidth="150px" />
-
----
 
 ---
 layout: closing

@@ -21,7 +21,6 @@ const props = defineProps({
   columnWidths: {
     type: Array,
     default: () => []
-    // Format: ['60%', '40%'] or ['200px', '300px']
   }
 })
 
@@ -43,7 +42,7 @@ const getColumnWidth = (index, header) => {
 <template>
   <SectionTitle v-if="title" :text="title" mb="2" />
 
-  <table class="w-full border-collapse text-sm leading-relaxed text-gray-800">
+  <table class="w-full border-collapse text-xs leading-snug text-gray-800">
     <colgroup>
       <col
         v-for="(header, index) in headers"
@@ -56,7 +55,7 @@ const getColumnWidth = (index, header) => {
         <th
           v-for="(header, index) in headers"
           :key="index"
-          class="py-1 px-3 text-left font-semibold text-white text-sm"
+          class="py-1.5 px-2.5 text-left font-semibold text-white text-xs"
         >
           {{ getHeaderText(header) }}
         </th>
@@ -71,7 +70,7 @@ const getColumnWidth = (index, header) => {
         <td
           v-for="(cell, cellIndex) in row"
           :key="cellIndex"
-          class="py-1.5 px-3 align-top text-gray-700"
+          class="py-2 px-2.5 align-top text-gray-700"
           v-html="cell"
         ></td>
       </tr>
@@ -80,7 +79,7 @@ const getColumnWidth = (index, header) => {
 
   <p
     v-if="caption"
-    class="mt-2 px-3 text-xs text-gray-500 text-left leading-tight"
+    class="mt-1.5 px-2.5 text-xs text-gray-500 text-left leading-tight"
     v-html="caption"
   ></p>
 </template>

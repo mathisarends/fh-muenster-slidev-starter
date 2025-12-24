@@ -33,9 +33,9 @@ defineProps({
 .bulleted-list :deep(li)::before {
   content: '■';
   position: absolute;
-  left: 0;
-  top: 0.2rem;
-  color: var(--fh-blue, #0066b3);
+  left: 0.2rem;
+  top: 0.4rem;
+  color: var(--fh-dark-blue, #0066b3);
   font-size: 0.35em;
 }
 
@@ -54,10 +54,9 @@ defineProps({
 .bulleted-list :deep(li > ul > li)::before {
   content: '■';
   font-size: 0.3em;
-  color: var(--fh-blue, #0066b3);
+  color: var(--fh-dark-blue, #0066b3);
 }
 
-/* Nested list styling - Level 3 */
 .bulleted-list :deep(li > ul > li > ul > li) {
   padding-left: 1.25rem;
   font-size: 0.85rem;
@@ -81,7 +80,6 @@ defineProps({
   width: 100%;
   color: #888;
   font-size: 0.85rem;
-  margin-top: 0.25rem;
   line-height: 1.3;
 }
 </style>

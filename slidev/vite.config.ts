@@ -11,7 +11,7 @@ export default defineConfig({
       '@components': resolve(__dirname, 'components'),
       '@public': resolve(__dirname, 'public'),
       '@composables': resolve(__dirname, 'composables'),
-      '@layouts': resolve(__dirname, 'layouts'),
+      '@layouts': resolve(__dirname, 'layouts')
     }
   }
 })

@@ -28,16 +28,18 @@ provide('footnotes', footnotes)
 
 <template>
   <div class="h-full flex flex-col px-8 pt-4 pb-4 bg-white relative">
-    <div class="flex justify-between items-start mb-1">
+    <div class="flex justify-between items-start mb-1.5">
       <Title :title="props.title" :subtitle="props.subtitle" />
       <Logo />
     </div>
+
+    <Divider :length="100" color="border-fh-orange" thickness="border-t-2" class="mb-3.5" />
 
     <div class="flex-1 py-3.5 space-y-3.5">
       <slot />
     </div>
 
-    <FootnoteList :divider-length="100" />
+    <FootnoteList :divider-length="25" />
 
     <Footer
       :presentation="$frontmatter?.presentation"

@@ -58,30 +58,3 @@ onMounted(() => {
   }
 })
 </script>
-
-<template>
-  <div class="image-container flex flex-col gap-2">
-    <h3 v-if="title" class="text-fh-dark-blue text-xl font-medium mb-2">
-      {{ title }}
-    </h3>
-
-    <div class="image-wrapper" :style="{ maxWidth: maxWidth, margin: '0 auto' }">
-      <img
-        :src="src"
-        :alt="alt"
-        :style="{ width: width, maxWidth: '100%', height: 'auto' }"
-        class="object-contain"
-      />
-
-      <div v-if="caption || source || figureInfo" class="mt-2 text-sm text-gray-700">
-        <div v-if="figureInfo" class="font-medium">
-          Abbildung {{ figureInfo.number }}:
-        </div>
-        <div v-if="caption" v-html="caption"></div>
-        <div v-if="source" class="text-gray-500 italic text-xs mt-1">
-          {{ source }}
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
