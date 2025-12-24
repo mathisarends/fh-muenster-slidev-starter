@@ -6,38 +6,47 @@ interface Figure {
   alt: string
   caption: string
   source: string
-  slide: number
+  number: number
 }
 
-const figures = ref<Figure[]>([])
-let figureCounter = 0
+const figuresMap = ref<Map<string, Figure>>(new Map())
 
 export const useFigures = () => {
-  const registerFigure = (figure: Omit<Figure, 'id' | 'slide'>) => {
-    figureCounter++
-    const id = `fig-${figureCounter}`
+  const registerFigure = (uniqueId: string, figure: Omit<Figure, 'id' | 'number'>) => {
+    const existing = figuresMap.value.get(uniqueId)
+    if (existing) {
+      return { id: existing.id, number: existing.number }
+    }
 
-    const slide = (window as any)?.$slidev?.nav?.currentPage || figureCounter
+    const number = figuresMap.value.size + 1
+    const id = `fig-${number}`
 
-    figures.value.push({
+    const newFigure: Figure = {
       id,
       ...figure,
-      slide
-    })
+      number
+    }
 
-    return { id, number: figureCounter }
+    figuresMap.value.set(uniqueId, newFigure)
+    return { id, number }
   }
 
-  const getFigures = () => figures.value
+  const getFigures = () => {
+    return Array.from(figuresMap.value.values()).sort((a, b) => a.number - b.number)
+  }
 
   const clearFigures = () => {
-    figures.value = []
-    figureCounter = 0
+    figuresMap.value.clear()
+  }
+
+  const hasFigure = (uniqueId: string) => {
+    return figuresMap.value.has(uniqueId)
   }
 
   return {
     registerFigure,
     getFigures,
-    clearFigures
+    clearFigures,
+    hasFigure
   }
 }

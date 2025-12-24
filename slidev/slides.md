@@ -366,12 +366,23 @@ App --> Benutzer: Protected Resource
 </Text>
 
 ---
-title: PlantUML Diagramm Demo
-subtitle: UML-Diagramme mit PlantUML
+title: Quellen
+subtitle: Abbildungen
 ---
 
 <FigureList title="Abbildungen" idWidth="150px" />
 
 ---
-# Ende
 
+---
+title: Quellen
+subtitle: Literatur
+---
+
+<FigureList title="Abbildungen" idWidth="150px" />
+
+---
+
+---
+layout: closing
+---
