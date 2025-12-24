@@ -4,6 +4,7 @@ fonts:
   sans: 'Nunito Sans'
   serif: 'Nunito Sans'
   mono: 'Fira Code'
+  weights: '400,600,700'
 ---
 
 ---
@@ -66,19 +67,19 @@ presentation: MongoDB und Redis im Big-Data Kontext
 
 <NumberedList title="Schritte zur Benutzerforschung">
   <li>
-    <span><span class="highlight">Zielgruppe definieren</span> - Bestimmen Sie, wer Ihre Zielbenutzer sind</span>
+    <span><HighlightedText>Zielgruppe definieren</HighlightedText> - Bestimmen Sie, wer Ihre Zielbenutzer sind</span>
     <SubText>Berücksichtigen Sie demografische, psychologische und Verhaltensmerkmale</SubText>
   </li>
   <li>
-    <span><span class="highlight">Forschungsmethoden wählen</span> - Interviews, Umfragen, Beobachtungen</span>
+    <span><HighlightedText>Forschungsmethoden wählen</HighlightedText> - Interviews, Umfragen, Beobachtungen</span>
     <SubText>Kombinieren Sie qualitative und quantitative Methoden für umfassende Erkenntnisse</SubText>
   </li>
   <li>
-    <span><span class="highlight">Daten sammeln und analysieren</span> - Führen Sie systematisch Daten ein</span>
+    <span><HighlightedText>Daten sammeln und analysieren</HighlightedText> - Führen Sie systematisch Daten ein</span>
     <SubText>Identifizieren Sie Muster, Bedürfnisse und Schmerzpunkte in den Benutzerdaten</SubText>
   </li>
   <li>
-    <span><span class="highlight">Personas erstellen</span> - Entwickeln Sie detaillierte Benutzerprofile</span>
+    <span><HighlightedText>Personas erstellen</HighlightedText> - Entwickeln Sie detaillierte Benutzerprofile</span>
     <SubText>Dokumentieren Sie Ziele, Aufgaben und Herausforderungen der einzelnen Persona-Typen</SubText>
   </li>
 </NumberedList>
@@ -160,12 +161,10 @@ source: https://www.geeksforgeeks.org/dbms/types-of-nosql-databases/
 
 <BulletedList title="Anmerkungen">
   <li>
-    Es beschreibt die konkrete Erledigung einer Aufgabe am <span class="highlight">zukünftigen</span> System aus der Perspektive des Benutzers
-    <SubText>Technische Aspekte des interaktiven Systems bleiben außen vor</SubText>
+    NoSQL-Datenbanken sind flexibel<Footnote text="Quelle: [GeT23, S. 42]" />
   </li>
   <li>
-    Typische Darlegungsformen: Narrative Form, Storyboard
-    <SubText>Zur Veranschaulichung von Nutzungsszenarien können zudem <span class="highlight">User Journey Maps</span> dienen</SubText>
+    Sie skalieren horizontal<Footnote text="Vgl. MongoDB Documentation 2024" />
   </li>
 </BulletedList>
 ---
@@ -179,13 +178,13 @@ presentation: MongoDB und Redis im Big-Data Kontext
 <Columns>
 
 <Text title="Text Komponente">
-  Dies ist ein normaler Text mit der <span class="highlight">highlight</span> Klasse für wichtige Begriffe.
+  Dies ist ein normaler Text mit der <HighlightedText>highlight</HighlightedText> Klasse für wichtige Begriffe.
   <SubText>Dies ist ein SubText, der zusätzliche Informationen liefert und in grauer Farbe dargestellt wird.</SubText>
 </Text>
 
 <Text title="Weiteres Beispiel">
-  Die <span class="highlight">Text-Komponente</span> folgt dem gleichen Pattern wie BulletedList.
-  <SubText>Sie unterstützt auch <span class="highlight">Highlights</span> innerhalb des SubTexts für besondere Hervorhebungen.</SubText>
+  Die <HighlightedText>Text-Komponente</HighlightedText> folgt dem gleichen Pattern wie BulletedList.
+  <SubText>Sie unterstützt auch <HighlightedText>Highlights</HighlightedText> innerhalb des SubTexts für besondere Hervorhebungen.</SubText>
 </Text>
 
 </Columns>
@@ -250,7 +249,7 @@ presentation: MongoDB und Redis im Big-Data Kontext
 />
 
 <Text title="Image Features">
-  Die Image-Komponente unterstützt <span class="highlight">Titel</span>, <span class="highlight">Caption</span> und <span class="highlight">Source</span>.
+  Die Image-Komponente unterstützt <HighlightedText>Titel</HighlightedText>, <HighlightedText>Caption</HighlightedText> und <HighlightedText>Source</HighlightedText>.
   <SubText>Perfekt für annotierte Bilder in Präsentationen</SubText>
 </Text>
 
@@ -331,11 +330,11 @@ addIcons({ 'star': star });
 
 <BulletedList title="Slidev Code Features">
   <li>
-    <span class="highlight">Line Highlighting</span>: Mit {2,5-7} Syntax
+    <HighlightedText>Line Highlighting</HighlightedText>: Mit {2,5-7} Syntax
     <SubText>Hebt bestimmte Zeilen hervor</SubText>
   </li>
   <li>
-    <span class="highlight">Shiki Syntax</span>: Automatisches Highlighting
+    <HighlightedText>Shiki Syntax</HighlightedText>: Automatisches Highlighting
     <SubText>Unterstützt alle gängigen Sprachen</SubText>
   </li>
 </BulletedList>
@@ -408,11 +407,11 @@ graph LR
 
 <BulletedList title="Vorteile von Mermaid">
   <li>
-    <span class="highlight">Einfache Syntax</span> zur Diagrammerstellung
+    <HighlightedText>Einfache Syntax</HighlightedText> zur Diagrammerstellung
     <SubText>Diagramme werden aus Text generiert und sind versionierbar</SubText>
   </li>
   <li>
-    <span class="highlight">Verschiedene Diagrammtypen</span> unterstützt
+    <HighlightedText>Verschiedene Diagrammtypen</HighlightedText> unterstützt
     <SubText>Flowcharts, Sequence Diagrams, Class Diagrams, etc.</SubText>
   </li>
 </BulletedList>
@@ -451,7 +450,7 @@ App --> Benutzer: Protected Resource
 ```
 
 <Text title="Anwendungsfälle">
-  PlantUML eignet sich besonders für <span class="highlight">UML-Diagramme</span> und technische Dokumentation.
+  PlantUML eignet sich besonders für <HighlightedText>UML-Diagramme</HighlightedText> und technische Dokumentation.
   <SubText>Ideal für Sequenzdiagramme, Klassendiagramme und Komponentendiagramme</SubText>
 </Text>
 

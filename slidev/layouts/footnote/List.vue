@@ -1,6 +1,6 @@
 <script setup>
 import Item from './Item.vue'
-import Divider from '../../components/Divider.vue'
+import Divider from '@components/Divider.vue'
 
 defineProps({
   items: {
@@ -18,12 +18,7 @@ defineProps({
   <div class="footnote-list mt-2">
     <Divider :length="dividerLength" class="mb-2" />
     <div class="space-y-0.5">
-      <Item v-for="(item, index) in items" :key="index" :number="index + 1" :text="item" />
-      <slot />
+      <Item v-for="item in items" :key="item.number" :number="item.number" :text="item.text" />
     </div>
   </div>
 </template>
-
-<style scoped>
-/* Footnote Liste mit Items */
-</style>

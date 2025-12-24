@@ -11,7 +11,7 @@ defineProps({
 
 <template>
   <div class="bulleted-list">
-    <SectionTitle v-if="title" :text="title" mb="1" />
+    <SectionTitle v-if="title" :text="title" />
 
     <ul class="list-none pl-0 space-y-1.5">
       <slot />

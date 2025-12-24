@@ -15,7 +15,7 @@ defineProps({
 
 <template>
   <div class="code-component">
-    <SectionTitle v-if="title" :text="title" mb="1" />
+    <SectionTitle v-if="title" :text="title" />
     <div class="code-wrapper">
       <div class="side-bar"></div>
       <div class="code-content">

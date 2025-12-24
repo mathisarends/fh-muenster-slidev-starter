@@ -1,5 +1,5 @@
 <script setup>
-import OutlineBadge from './OutlineBadge.vue'
+import OutlineBadge from './NumberBadge.vue'
 
 defineProps({
   number: {
@@ -18,10 +18,10 @@ defineProps({
 </script>
 
 <template>
-  <div class="flex items-center gap-2.5 py-1">
-    <OutlineBadge :number="number" :active="active" :disabled="disabled" />
+  <div class="flex items-center gap-2.5">
+    <OutlineBadge :number="number" :active="active" :disabled="disabled" :size="sm" />
     <span
-      class="text-lg font-medium leading-tight"
+      class="text-lg font-medium"
       :class="{
         'text-fh-orange': active,
         'text-gray-400': disabled,

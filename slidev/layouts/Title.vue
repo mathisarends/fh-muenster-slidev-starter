@@ -13,10 +13,10 @@ defineProps({
 
 <template>
   <div class="flex-1 mt-2">
-    <h1 class="text-4xl font-extrabold text-[#003978] m-0 leading-tight">
+    <h1 class="text-4xl font-black text-fh-dark-blue m-0 leading-tight tracking-tight">
       {{ title }}
     </h1>
-    <p v-if="subtitle" class="text-xl -mt-0.5 text-[#4D4D4D] font-normal">
+    <p v-if="subtitle" class="text-xl -mt-1 text-gray-600 font-light">
       {{ subtitle }}
     </p>
   </div>
