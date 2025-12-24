@@ -5,10 +5,6 @@ defineProps({
   title: {
     type: String,
     default: ''
-  },
-  language: {
-    type: String,
-    default: 'typescript'
   }
 })
 </script>
@@ -32,9 +28,9 @@ defineProps({
 
 .code-wrapper {
   display: flex;
-  background: #f5f5f5;
-  border: 1px solid #f5f5f5;
+  border-radius: 0.5rem;
   overflow: hidden;
+  background: #f8f8f8;
 }
 
 .side-bar {
@@ -45,39 +41,19 @@ defineProps({
 
 .code-content {
   flex: 1;
+  overflow: auto;
 }
 
+/* NUR spacing anpassen, NICHT die Farben überschreiben */
 .code-content :deep(pre) {
   margin: 0 !important;
-  padding: 0.25rem 1rem !important;
-  background: #f5f5f5 !important;
-  font-size: 0.85rem;
-  line-height: 1.5;
+  padding: 1rem !important;
+  background: transparent !important;
 }
 
 .code-content :deep(code) {
   font-family: 'Fira Code', monospace;
-}
-
-.code-content :deep(.token.keyword) {
-  color: var(--fh-blue, #0066b3) !important;
-  font-weight: 600;
-}
-
-.code-content :deep(.token.string) {
-  color: #c7254e !important;
-}
-
-.code-content :deep(.token.function) {
-  color: #d97706 !important;
-}
-
-.code-content :deep(.token.comment) {
-  color: #6c757d !important;
-  font-style: italic;
-}
-
-.code-content :deep(.token.punctuation) {
-  color: #333 !important;
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 </style>

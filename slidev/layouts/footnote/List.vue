@@ -1,24 +1,42 @@
 <script setup>
+import { inject, computed } from 'vue'
+import { useSlideContext } from '@slidev/client'
 import Item from './Item.vue'
 import Divider from '@components/Divider.vue'
 
 defineProps({
-  items: {
-    type: Array,
-    default: () => []
-  },
   dividerLength: {
     type: [String, Number],
     default: 100
   }
 })
+
+const { $frontmatter } = useSlideContext()
+const footnotes = inject('footnotes', { value: [] })
+
+const allFootnotes = computed(() => {
+  const staticFootnotes = ($frontmatter.value?.footnotes || []).map((text, index) => ({
+    number: index + 1,
+    text
+  }))
+  const dynamicFootnotes = footnotes.value.map(item => ({
+    number: staticFootnotes.length + item.number,
+    text: item.text
+  }))
+  return [...staticFootnotes, ...dynamicFootnotes]
+})
 </script>
 
 <template>
-  <div class="footnote-list mt-2">
+  <div v-if="allFootnotes.length > 0" class="footnote-list mt-2">
     <Divider :length="dividerLength" class="mb-2" />
     <div class="space-y-0.5">
-      <Item v-for="item in items" :key="item.number" :number="item.number" :text="item.text" />
+      <Item
+        v-for="item in allFootnotes"
+        :key="item.number"
+        :number="item.number"
+        :text="item.text"
+      />
     </div>
   </div>
 </template>

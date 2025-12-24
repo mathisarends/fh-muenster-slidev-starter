@@ -1,8 +1,12 @@
 <script setup>
-import { usePresentationInfo } from '../composables/usePresentationInfo'
 import Divider from '@components/Divider.vue'
 
-const info = usePresentationInfo()
+const info = $slidev.configs?.presentationInfo || {
+  title: '',
+  subtitle: '',
+  semester: '',
+  authors: []
+}
 </script>
 
 <template>

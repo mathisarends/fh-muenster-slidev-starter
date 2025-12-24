@@ -1,7 +1,8 @@
 <script setup>
-import { usePresentationInfo } from '@composables/usePresentationInfo'
-
-const info = usePresentationInfo()
+const info = $slidev.configs?.presentationInfo || {
+  title: '',
+  subtitle: ''
+}
 
 defineProps({
   chapter: {
@@ -28,6 +29,6 @@ defineProps({
       <span v-if="chapter"> | {{ chapter }}</span>
       <span v-if="section"> | {{ section }}</span>
     </div>
-    <span class="text-[#D9D9D9] text-[10.5px]">{{ currentPage }}</span>
+    <span class="text-[#D9D9D9] text-[10.5px]">{{ currentPage - 1 }}</span>
   </div>
 </template>

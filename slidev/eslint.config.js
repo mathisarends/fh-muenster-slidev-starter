@@ -20,6 +20,15 @@ export default [
         parser: parserTypeScript,
         ecmaVersion: 'latest',
         sourceType: 'module'
+      },
+      globals: {
+        $slidev: 'readonly',
+        $nav: 'readonly',
+        $clicks: 'readonly',
+        $page: 'readonly',
+        $frontmatter: 'readonly',
+        $renderContext: 'readonly',
+        $clicksContext: 'readonly'
       }
     },
     plugins: {

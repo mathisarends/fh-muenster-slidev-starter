@@ -1,9 +1,7 @@
-<!-- layouts/closing.vue -->
 <script setup>
-import { usePresentationInfo } from '../composables/usePresentationInfo'
 import Divider from '@components/Divider.vue'
 
-const info = usePresentationInfo()
+const info = $slidev.configs?.presentationInfo || { authors: [] }
 </script>
 
 <template>
@@ -18,13 +16,12 @@ const info = usePresentationInfo()
         <h1 class="text-5xl font-black text-fh-blue leading-tight mb-5">
           Vielen Dank für Ihre Aufmerksamkeit!
         </h1>
-
         <p class="text-3xl text-gray-500">Gibt es noch Fragen?</p>
       </div>
 
       <Divider :length="100" color="border-fh-orange" thickness="border-t-2" class="mb-6" />
 
-      <div class="grid grid-cols-3 gap-6 mt-8">
+      <div v-if="info.authors?.length" class="grid grid-cols-3 gap-6 mt-8">
         <div v-for="author in info.authors" :key="author.name">
           <p class="text-base font-semibold text-gray-800 mb-0.5">{{ author.name }}</p>
           <p class="text-xs text-gray-600 leading-relaxed">
