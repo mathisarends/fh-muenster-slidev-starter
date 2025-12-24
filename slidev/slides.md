@@ -31,9 +31,6 @@ subtitle: Relevanz im Big-Data Kontext
 colorSchema: light
 chapter: Test
 presentation: MongoDB und Redis im Big-Data Kontext
-footnotes:
-  - "Unter anderem werden keine UI-Elemente betrachtet."
-  - "Bildquelle: Eigene Darstellung (erstellt mit Mermaid.js)"
 ---
 
 <Outline>
@@ -92,8 +89,6 @@ title: Checkliste für die Beschreibung von Benutzermerkmalen
 subtitle: Nested BulletedList Demo
 chapter: Test
 presentation: MongoDB und Redis im Big-Data Kontext
-footnotes:
-  - "Quelle: [UXQ23, S. 42]"
 ---
 
 <Columns>

@@ -9,7 +9,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@components': resolve(__dirname, 'components'),
-      '@public': resolve(__dirname, 'public')
+      '@public': resolve(__dirname, 'public'),
+      '@composables': resolve(__dirname, 'composables')
     }
   }
 })

@@ -5,7 +5,7 @@ import Title from './Title.vue'
 import Logo from './Logo.vue'
 import Footer from './Footer.vue'
 import FootnoteList from './footnote/List.vue'
-import { provideFootnotes } from '../composables/useFootnotes'
+import { provideFootnotes } from '@composables/useFootnotes'
 
 const { $frontmatter, $slidev } = useSlideContext()
 
