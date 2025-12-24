@@ -1,7 +1,9 @@
 <script setup>
+import { onMounted } from 'vue'
 import SectionTitle from '@components/SectionTitle.vue'
+import { useFigures } from '@composables/useFigures'
 
-defineProps({
+const props = defineProps({
   title: {
     type: String,
     default: ''
@@ -31,6 +33,20 @@ defineProps({
     default: '100%'
   }
 })
+
+const { registerFigure } = useFigures()
+let figureInfo = { id: '', number: 0 }
+
+onMounted(() => {
+  if (props.caption || props.source) {
+    figureInfo = registerFigure({
+      src: props.src,
+      alt: props.alt,
+      caption: props.caption,
+      source: props.source
+    })
+  }
+})
 </script>
 
 <template>
@@ -38,10 +54,20 @@ defineProps({
     <SectionTitle v-if="title" :text="title" mb="2" />
 
     <div class="inline-block" :style="{ maxWidth: maxWidth }">
-      <img :src="src" :alt="alt" :style="{ width: width }" class="block h-auto" />
+      <img
+        :id="figureInfo.id"
+        :src="src"
+        :alt="alt"
+        :style="{ width: width }"
+        class="block h-auto"
+      />
 
-      <div v-if="caption" class="mt-2">
-        <p class="text-gray-500 text-xs m-0">{{ caption }}</p>
+      <div v-if="caption || source" class="mt-2">
+        <p v-if="caption" class="text-gray-500 text-xs m-0">
+          <span v-if="figureInfo.number" class="font-semibold">Abb. {{ figureInfo.number }}:</span>
+          {{ caption }}
+        </p>
+        <p v-if="source" class="text-gray-400 text-xs italic m-0">Quelle: {{ source }}</p>
       </div>
     </div>
   </div>

@@ -9,23 +9,9 @@ fonts:
 
 ---
 layout: cover
-title: Scientific Computing
-subtitle: Kapitel 3
-semester: Wintersemester 2025/26
-authors:
-  - name: Leon Licher
-    matrikelnummer: 1233258
-    email: ll609274@fh-muenster.de
-  - name: Daniel Fischer
-    matrikelnummer: 1255216
-    email: df094981@fh-muenster.de
-  - name: Mathis Arends
-    matrikelnummer: 1241877
-    email: ma197404@fh-muenster.de
 ---
 
 ---
-layout: default
 title: NoSQL
 subtitle: Relevanz im Big-Data Kontext
 ---
@@ -38,7 +24,6 @@ subtitle: Relevanz im Big-Data Kontext
 </Outline>
 
 ---
-layout: default
 title: DefinitionBox Demo
 subtitle: Begriffsdefinitionen hervorheben
 ---
@@ -48,7 +33,6 @@ subtitle: Begriffsdefinitionen hervorheben
 </DefinitionBox>
 
 ---
-layout: default
 title: Numbered List Demo
 subtitle: Nummerierte Listen mit Tailwind
 ---
@@ -73,7 +57,6 @@ subtitle: Nummerierte Listen mit Tailwind
 </NumberedList>
 
 ---
-layout: default
 title: Checkliste für die Beschreibung von Benutzermerkmalen
 subtitle: Nested BulletedList Demo
 ---
@@ -127,7 +110,6 @@ subtitle: Nested BulletedList Demo
 </Columns>
 
 ---
-layout: default
 title: NoSQL
 subtitle: Relevanz im Big-Data Kontext
 ---
@@ -147,7 +129,6 @@ subtitle: Relevanz im Big-Data Kontext
   </li>
 </BulletedList>
 ---
-layout: default
 title: Text Komponente Demo
 subtitle: Mit SubText Beispielen
 ---
@@ -167,7 +148,6 @@ subtitle: Mit SubText Beispielen
 </Columns>
 
 ---
-layout: default
 title: HighlightBox Demo
 subtitle: Hervorgehobene Infoboxen
 ---
@@ -177,7 +157,6 @@ subtitle: Hervorgehobene Infoboxen
 </HighlightBox>
 
 ---
-layout: default
 title: Table Komponente Demo
 subtitle: Mit alternierenden Zeilen
 ---
@@ -203,7 +182,6 @@ subtitle: Mit alternierenden Zeilen
 />
 
 ---
-layout: default
 title: Image Komponente Demo
 subtitle: Mit Caption und Source
 ---
@@ -221,7 +199,6 @@ subtitle: Mit Caption und Source
   <SubText>Perfekt für annotierte Bilder in Präsentationen</SubText>
 </Text>
 ---
-layout: default
 title: Code Komponente Demo
 subtitle: Mit Syntax-Highlighting
 ---
@@ -264,7 +241,6 @@ customElements.define('ion-icon', IonIcon);
 
 </Columns>
 ---
-layout: default
 title: Nativ Slidev Code-Blöcke
 subtitle: Mit Line Highlighting
 ---
@@ -295,7 +271,6 @@ addIcons({ 'star': star });
 </BulletedList>
 
 ---
-layout: default
 title: Quellen
 subtitle: Literaturverzeichnis
 ---
@@ -314,7 +289,6 @@ subtitle: Literaturverzeichnis
 </Container>
 
 ---
-layout: default
 title: Quellen
 subtitle: Normen und Standards
 ---
@@ -329,7 +303,6 @@ subtitle: Normen und Standards
 />
 
 ---
-layout: default
 title: Mermaid Diagramm Demo
 subtitle: Visualisierung mit Mermaid.js
 ---
@@ -362,7 +335,6 @@ graph LR
   </li>
 </BulletedList>
 ---
-layout: default
 title: PlantUML Diagramm Demo
 subtitle: UML-Diagramme mit PlantUML
 ---
@@ -392,8 +364,14 @@ App --> Benutzer: Protected Resource
   PlantUML eignet sich besonders für <HighlightedText>UML-Diagramme</HighlightedText> und technische Dokumentation.
   <SubText>Ideal für Sequenzdiagramme, Klassendiagramme und Komponentendiagramme</SubText>
 </Text>
+
 ---
-layout: cover
+title: PlantUML Diagramm Demo
+subtitle: UML-Diagramme mit PlantUML
 ---
 
+<FigureList title="Abbildungen" idWidth="150px" />
+
+---
 # Ende
+
