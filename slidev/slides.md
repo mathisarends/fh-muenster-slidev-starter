@@ -28,9 +28,6 @@ authors:
 layout: default
 title: NoSQL
 subtitle: Relevanz im Big-Data Kontext
-colorSchema: light
-chapter: Test
-presentation: MongoDB und Redis im Big-Data Kontext
 ---
 
 <Outline>
@@ -44,8 +41,6 @@ presentation: MongoDB und Redis im Big-Data Kontext
 layout: default
 title: DefinitionBox Demo
 subtitle: Begriffsdefinitionen hervorheben
-chapter: Test
-presentation: MongoDB und Redis im Big-Data Kontext
 ---
 
 <DefinitionBox title="Menschzentrierte Gestaltung" source="DIN EN ISO 9241-210:2020-03, S. 9">
@@ -56,11 +51,7 @@ presentation: MongoDB und Redis im Big-Data Kontext
 layout: default
 title: Numbered List Demo
 subtitle: Nummerierte Listen mit Tailwind
-chapter: Test
-presentation: MongoDB und Redis im Big-Data Kontext
 ---
-
-<StackedLayout>
 
 <NumberedList title="Schritte zur Benutzerforschung">
   <li>
@@ -81,14 +72,10 @@ presentation: MongoDB und Redis im Big-Data Kontext
   </li>
 </NumberedList>
 
-</StackedLayout>
-
 ---
 layout: default
 title: Checkliste für die Beschreibung von Benutzermerkmalen
 subtitle: Nested BulletedList Demo
-chapter: Test
-presentation: MongoDB und Redis im Big-Data Kontext
 ---
 
 <Columns>
@@ -143,9 +130,6 @@ presentation: MongoDB und Redis im Big-Data Kontext
 layout: default
 title: NoSQL
 subtitle: Relevanz im Big-Data Kontext
-chapter: Test
-presentation: MongoDB und Redis im Big-Data Kontext
-source: https://www.geeksforgeeks.org/dbms/types-of-nosql-databases/
 ---
 
 <Quotebox source="[UXQ23, S. 39]">
@@ -166,8 +150,6 @@ source: https://www.geeksforgeeks.org/dbms/types-of-nosql-databases/
 layout: default
 title: Text Komponente Demo
 subtitle: Mit SubText Beispielen
-chapter: Test
-presentation: MongoDB und Redis im Big-Data Kontext
 ---
 
 <Columns>
@@ -188,8 +170,6 @@ presentation: MongoDB und Redis im Big-Data Kontext
 layout: default
 title: HighlightBox Demo
 subtitle: Hervorgehobene Infoboxen
-chapter: Test
-presentation: MongoDB und Redis im Big-Data Kontext
 ---
 
 <HighlightBox title="Farbwiedergabe">
@@ -200,8 +180,6 @@ presentation: MongoDB und Redis im Big-Data Kontext
 layout: default
 title: Table Komponente Demo
 subtitle: Mit alternierenden Zeilen
-chapter: Test
-presentation: MongoDB und Redis im Big-Data Kontext
 ---
 
 <Table 
@@ -228,12 +206,7 @@ presentation: MongoDB und Redis im Big-Data Kontext
 layout: default
 title: Image Komponente Demo
 subtitle: Mit Caption und Source
-chapter: Test
-presentation: MongoDB und Redis im Big-Data Kontext
 ---
-
-<StackedLayout>
-
 <Image 
   title="Ionic Framework Beispiel"
   src="/images/fh-logo.jpg"
@@ -247,19 +220,11 @@ presentation: MongoDB und Redis im Big-Data Kontext
   Die Image-Komponente unterstützt <HighlightedText>Titel</HighlightedText>, <HighlightedText>Caption</HighlightedText> und <HighlightedText>Source</HighlightedText>.
   <SubText>Perfekt für annotierte Bilder in Präsentationen</SubText>
 </Text>
-
-</StackedLayout>
-
 ---
 layout: default
 title: Code Komponente Demo
 subtitle: Mit Syntax-Highlighting
-chapter: Test
-presentation: MongoDB und Redis im Big-Data Kontext
 ---
-
-<StackedLayout>
-
 <Columns>
 
 <Code title="TypeScript Beispiel">
@@ -298,15 +263,10 @@ customElements.define('ion-icon', IonIcon);
 </Code>
 
 </Columns>
-
-</StackedLayout>
-
 ---
 layout: default
 title: Nativ Slidev Code-Blöcke
 subtitle: Mit Line Highlighting
-chapter: Test
-presentation: MongoDB und Redis im Big-Data Kontext
 ---
 
 # Mit Slidev Features
@@ -338,8 +298,6 @@ addIcons({ 'star': star });
 layout: default
 title: Quellen
 subtitle: Literaturverzeichnis
-chapter: Test
-presentation: MongoDB und Redis im Big-Data Kontext
 ---
 
 <Container>
@@ -359,8 +317,6 @@ presentation: MongoDB und Redis im Big-Data Kontext
 layout: default
 title: Quellen
 subtitle: Normen und Standards
-chapter: Test
-presentation: MongoDB und Redis im Big-Data Kontext
 ---
 
 <CitationTable 
@@ -376,12 +332,7 @@ presentation: MongoDB und Redis im Big-Data Kontext
 layout: default
 title: Mermaid Diagramm Demo
 subtitle: Visualisierung mit Mermaid.js
-chapter: Test
-presentation: MongoDB und Redis im Big-Data Kontext
 ---
-
-<StackedLayout>
-
 ```mermaid
 graph LR
     A[Client/Browser] -->|HTTP Request| B[Web Server]
@@ -410,18 +361,11 @@ graph LR
     <SubText>Flowcharts, Sequence Diagrams, Class Diagrams, etc.</SubText>
   </li>
 </BulletedList>
-
-</StackedLayout>
-
 ---
 layout: default
 title: PlantUML Diagramm Demo
 subtitle: UML-Diagramme mit PlantUML
-chapter: Test
-presentation: MongoDB und Redis im Big-Data Kontext
 ---
-
-<StackedLayout>
 
 ```plantuml
 @startuml
@@ -448,9 +392,6 @@ App --> Benutzer: Protected Resource
   PlantUML eignet sich besonders für <HighlightedText>UML-Diagramme</HighlightedText> und technische Dokumentation.
   <SubText>Ideal für Sequenzdiagramme, Klassendiagramme und Komponentendiagramme</SubText>
 </Text>
-
-</StackedLayout>
-
 ---
 layout: cover
 ---

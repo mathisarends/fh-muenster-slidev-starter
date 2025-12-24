@@ -19,5 +19,5 @@ const footnoteNumber = computed(() => {
 </script>
 
 <template>
-  <sup class="text-gray-600 text-[0.7em] font-normal ml-0.25">{{ footnoteNumber }}</sup>
+  <sup class="text-gray-600 text-[0.65em] font-normal ml-0.5">{{ footnoteNumber }}</sup>
 </template>

@@ -1,22 +1,8 @@
 <script setup>
-defineProps({
-  title: {
-    type: String,
-    default: ''
-  },
-  subtitle: {
-    type: String,
-    default: ''
-  },
-  semester: {
-    type: String,
-    default: ''
-  },
-  authors: {
-    type: Array,
-    default: () => []
-  }
-})
+import { usePresentationInfo } from '../composables/usePresentationInfo'
+import Divider from '@components/Divider.vue'
+
+const info = usePresentationInfo()
 </script>
 
 <template>
@@ -29,20 +15,22 @@ defineProps({
 
       <div class="flex-1 flex flex-col justify-center pb-9">
         <h1 class="text-5xl font-bold text-fh-blue leading-snug mb-2">
-          {{ title || $frontmatter.title }}
+          {{ info.title }}
         </h1>
 
         <h2 class="text-3xl font-semibold text-fh-blue mb-4">
-          {{ subtitle || $frontmatter.subtitle }}
+          {{ info.subtitle }}
         </h2>
 
         <p class="text-xl text-gray-400">
-          {{ semester || $frontmatter.semester }}
+          {{ info.semester }}
         </p>
       </div>
 
+      <Divider :length="100" color="border-fh-orange" thickness="border-t-2" class="mb-6" />
+
       <div class="grid grid-cols-3 gap-6 mt-8">
-        <div v-for="author in authors || $frontmatter.authors" :key="author.name">
+        <div v-for="author in info.authors" :key="author.name">
           <p class="text-base font-semibold text-gray-800 mb-0.5">{{ author.name }}</p>
           <p class="text-xs text-gray-600 leading-relaxed">
             Matrikelnummer: {{ author.matrikelnummer }}<br />

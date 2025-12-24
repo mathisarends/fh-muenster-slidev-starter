@@ -34,49 +34,15 @@ defineProps({
 </script>
 
 <template>
-  <div class="image-component">
+  <div class="my-4">
     <SectionTitle v-if="title" :text="title" mb="2" />
 
-    <div class="image-wrapper" :style="{ maxWidth: maxWidth }">
-      <img :src="src" :alt="alt" :style="{ width: width }" class="image" />
+    <div class="inline-block" :style="{ maxWidth: maxWidth }">
+      <img :src="src" :alt="alt" :style="{ width: width }" class="block h-auto" />
 
-      <div v-if="caption || source" class="image-footer">
-        <p v-if="caption" class="caption">{{ caption }}</p>
-        <p v-if="source" class="source">{{ source }}</p>
+      <div v-if="caption" class="mt-2">
+        <p class="text-gray-500 text-xs m-0">{{ caption }}</p>
       </div>
     </div>
   </div>
 </template>
-
-<style scoped>
-.image-component {
-  margin: 1rem 0;
-}
-
-.image-wrapper {
-  display: inline-block;
-}
-
-.image {
-  display: block;
-  height: auto;
-}
-
-.image-footer {
-  margin-top: 0.5rem;
-}
-
-.caption {
-  color: #333;
-  font-size: 0.85rem;
-  line-height: 1.4;
-  margin: 0 0 0.25rem 0;
-}
-
-.source {
-  color: #888;
-  font-size: 0.75rem;
-  font-style: italic;
-  margin: 0;
-}
-</style>
