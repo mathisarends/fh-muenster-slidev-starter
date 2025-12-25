@@ -22,7 +22,7 @@ defineProps({
 
 <template>
   <div
-    class="footer-container relative flex justify-between items-center py-1 px-8 -mx-8 -mb-4 mt-2"
+    class="footer-container relative flex justify-between items-center py-1 pl-5.5 pr-7 -mx-8 -mb-4 mt-2"
   >
     <div class="bg-gray-50 px-3 py-0.5 rounded-lg text-gray-600 text-[11px] relative z-10">
       <span v-if="!chapter">{{ info.title }} - {{ info.subtitle }}</span>

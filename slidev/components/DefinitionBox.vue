@@ -14,7 +14,7 @@ defineProps({
 <template>
   <div class="relative">
     <!-- Title Badge -->
-    <div class="inline-block bg-fh-blue text-white px-4 py-1 text-sm font-semibold">
+    <div class="inline-block bg-fh-blue text-white px-4 py-0.75 text-sm font-semibold">
       {{ title }}
     </div>
 

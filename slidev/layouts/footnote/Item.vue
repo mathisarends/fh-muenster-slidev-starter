@@ -13,8 +13,8 @@ defineProps({
 
 <template>
   <div class="footnote-item flex gap-1.5 items-start">
-    <span class="text-fh-blue text-[10px] leading-tight">{{ number }}</span>
-    <span class="text-gray-600 text-[10px] leading-tight flex-1">
+    <span class="text-fh-blue text-[9px] leading-tight">{{ number }}</span>
+    <span class="text-gray-600 text-[9px] leading-tight flex-1">
       <slot>{{ text }}</slot>
     </span>
   </div>

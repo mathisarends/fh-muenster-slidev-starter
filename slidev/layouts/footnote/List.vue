@@ -28,9 +28,9 @@ const allFootnotes = computed(() => {
 </script>
 
 <template>
-  <div v-if="allFootnotes.length > 0" class="footnote-list mt-2">
-    <Divider :length="dividerLength" class="mb-2" />
-    <div class="space-y-0.5">
+  <div v-if="allFootnotes.length > 0" class="footnote-list mt-0">
+    <Divider :length="dividerLength" thickness="border-t" class="mb-1.25" />
+    <div class="space-y-0.25">
       <Item
         v-for="item in allFootnotes"
         :key="item.number"

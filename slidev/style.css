@@ -1,0 +1,5 @@
+.slidev-code,
+.slidev-code pre,
+pre.shiki {
+  background: #ffffff !important;
+}

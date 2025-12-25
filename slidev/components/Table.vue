@@ -50,12 +50,12 @@ const getColumnWidth = (index, header) => {
         :style="{ width: getColumnWidth(index, header) }"
       />
     </colgroup>
-    <thead class="bg-fh-blue border-b-2 border-white">
+    <thead class="bg-fh-50 border-b border-gray-300">
       <tr>
         <th
           v-for="(header, index) in headers"
           :key="index"
-          class="py-1.5 px-2.5 text-left font-semibold text-white text-xs"
+          class="py-1 px-2 text-left font-semibold text-gray-800 text-xs border-r border-gray-300 last:border-r-0"
         >
           {{ getHeaderText(header) }}
         </th>
@@ -70,7 +70,7 @@ const getColumnWidth = (index, header) => {
         <td
           v-for="(cell, cellIndex) in row"
           :key="cellIndex"
-          class="py-2 px-2.5 align-top text-gray-700"
+          class="py-1.5 px-2 align-top text-gray-700 border-r border-gray-300 last:border-r-0"
           v-html="cell"
         ></td>
       </tr>
@@ -79,7 +79,7 @@ const getColumnWidth = (index, header) => {
 
   <p
     v-if="caption"
-    class="mt-1.5 px-2.5 text-xs text-gray-500 text-left leading-tight"
+    class="px-1.5 text-xs text-gray-500 text-left leading-tight"
     v-html="caption"
   ></p>
 </template>

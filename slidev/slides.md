@@ -1,5 +1,6 @@
 ---
 theme: default
+highlighter: shiki
 fonts:
   sans: 'Nunito Sans'
   serif: 'Nunito Sans'
