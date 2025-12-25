@@ -1,5 +1,7 @@
 .slidev-code,
 .slidev-code pre,
 pre.shiki {
-  background: #ffffff !important;
+  background: #fcfcfcff !important;
+  font-size: 0.8em !important;
+  border-radius: 8px !important;
 }

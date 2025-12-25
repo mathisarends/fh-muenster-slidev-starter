@@ -24,12 +24,12 @@ defineProps({
   <div
     class="footer-container relative flex justify-between items-center py-1 pl-5.5 pr-7 -mx-8 -mb-4 mt-2"
   >
-    <div class="bg-gray-50 px-3 py-0.5 rounded-lg text-gray-600 text-[11px] relative z-10">
+    <div class="bg-white px-3 py-0.5 rounded-lg text-gray-600 text-[11px] relative z-10">
       <span v-if="!chapter">{{ info.title }} - {{ info.subtitle }}</span>
       <span v-else>{{ info.subtitle }}</span>
       <span v-if="section"> | {{ section }}</span>
     </div>
-    <span class="bg-gray-50 px-3 py-0.5 rounded-lg text-gray-600 text-[11.5px] relative z-10">
+    <span class="bg-white px-3 py-0.5 rounded-lg text-gray-600 text-[11.5px] relative z-10">
       {{ currentPage - 1 }}
     </span>
   </div>
@@ -44,7 +44,7 @@ defineProps({
   background-repeat: repeat-x;
   background-size: auto 100%;
   background-position: center;
-  filter: grayscale(0.8) opacity(0.4) blur(0.5px);
+  filter: grayscale(1) opacity(0.15) blur(1.5px);
   z-index: 0;
 }
 </style>

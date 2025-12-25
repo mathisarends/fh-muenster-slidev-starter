@@ -168,7 +168,6 @@ subtitle: BSON und JSON im Vergleich
 
 <Columns>
 
-<Code title="JSON Dokument">
 
 ```json
 {
@@ -178,10 +177,6 @@ subtitle: BSON und JSON im Vergleich
   "registered": "2024-01-15"
 }
 ```
-
-</Code>
-
-<Code title="BSON mit erweiterten Typen">
 
 ```javascript
 {
@@ -194,8 +189,6 @@ subtitle: BSON und JSON im Vergleich
   tags: ["premium", "verified"]
 }
 ```
-
-</Code>
 
 </Columns>
 
@@ -257,8 +250,6 @@ title: E-Commerce Datenmodell
 subtitle: Praktische Anwendung der Patterns
 ---
 
-<Code title="Produkt mit Embedded Documents und Referenzen">
-
 ```javascript
 {
   _id: ObjectId("..."),
@@ -289,8 +280,6 @@ subtitle: Praktische Anwendung der Patterns
   }
 }
 ```
-
-</Code>
 
 ---
 layout: chapter-intro
@@ -376,8 +365,6 @@ subtitle: Dokumente finden und filtern
 
 <Columns>
 
-<Code title="Einfache Queries">
-
 ```javascript
 // Alle Dokumente
 db.users.find()
@@ -399,10 +386,6 @@ db.users.find()
   .limit(10)
 ```
 
-</Code>
-
-<Code title="Komplexe Queries">
-
 ```javascript
 // Logische Operatoren
 db.products.find({
@@ -422,8 +405,6 @@ db.users.find({
   email: /^anna/i
 })
 ```
-
-</Code>
 
 </Columns>
 
@@ -561,8 +542,6 @@ title: Index erstellen und verwalten
 subtitle: Praktische Beispiele
 ---
 
-<Code title="Index-Management Kommandos">
-
 ```javascript
 // Single Field Index erstellen
 db.users.createIndex({ email: 1 });  // 1 = aufsteigend, -1 = absteigend
@@ -588,8 +567,6 @@ db.users.getIndexes();
 // Index löschen
 db.users.dropIndex("email_1");
 ```
-
-</Code>
 
 ---
 title: Explain Plan
@@ -784,8 +761,6 @@ title: Aggregation Beispiel 2
 subtitle: Lookup für Collection-Joins
 ---
 
-<Code title="Bestellungen mit Kundeninformationen anreichern">
-
 ```javascript
 db.orders.aggregate([
   // Stage 1: Recent orders
@@ -818,8 +793,6 @@ db.orders.aggregate([
   }
 ]);
 ```
-
-</Code>
 
 ---
 title: Aggregation Visualisierung
@@ -873,8 +846,6 @@ subtitle: Komplexe Business-Anforderungen
   </li>
 </BulletedList>
 
-<Code title="Aggregation Query">
-
 ```javascript
 db.orders.aggregate([
   {
@@ -909,8 +880,6 @@ db.orders.aggregate([
   { $limit: 10 }
 ]);
 ```
-
-</Code>
 
 </Columns>
 
