@@ -35,7 +35,7 @@ provide('footnotes', footnotes)
 
     <Divider :length="100" color="border-fh-orange" thickness="border-t-2" class="mb-3.5" />
 
-    <div class="flex-1 py-3.5 space-y-3.5">
+    <div class="flex-1 py-3.5 space-y-3.5 overflow-hidden">
       <slot />
     </div>
 

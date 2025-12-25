@@ -905,17 +905,15 @@ title: Weitere Ressourcen
 subtitle: Online-Materialien und Tools
 ---
 
-<Container>
-  <CitationTable 
-    title="Nützliche Links"
-    :citations="[
-      { id: 'MongoDB University', text: 'Kostenlose Online-Kurse und Zertifizierungen: <em>https://university.mongodb.com</em>' },
-      { id: 'MongoDB Compass', text: 'GUI-Tool für MongoDB: <em>https://www.mongodb.com/products/compass</em>' },
-      { id: 'MongoDB Atlas', text: 'Cloud-hosted MongoDB: <em>https://www.mongodb.com/cloud/atlas</em>' },
-      { id: 'Community Forum', text: 'MongoDB Community: <em>https://www.mongodb.com/community/forums</em>' }
-    ]"
-  />
-</Container>
+<CitationTable 
+  title="Nützliche Links"
+  :citations="[
+    { id: 'MongoDB University', text: 'Kostenlose Online-Kurse und Zertifizierungen: <em>https://university.mongodb.com</em>' },
+    { id: 'MongoDB Compass', text: 'GUI-Tool für MongoDB: <em>https://www.mongodb.com/products/compass</em>' },
+    { id: 'MongoDB Atlas', text: 'Cloud-hosted MongoDB: <em>https://www.mongodb.com/cloud/atlas</em>' },
+    { id: 'Community Forum', text: 'MongoDB Community: <em>https://www.mongodb.com/community/forums</em>' }
+  ]"
+/>
 
 <HighlightBox title="Nächste Schritte">
   MongoDB bietet umfangreiche Features wie Replica Sets, Sharding, Change Streams und Transactions. Die offizielle Dokumentation und MongoDB University bieten detaillierte Tutorials für fortgeschrittene Themen.
