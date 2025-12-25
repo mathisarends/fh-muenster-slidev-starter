@@ -43,7 +43,7 @@ provide('footnotes', footnotes)
 
     <Footer
       :presentation="$frontmatter?.presentation"
-      :chapter="$frontmatter?.chapter"
+      :chapter="$frontmatter?.chapter ? String($frontmatter.chapter) : undefined"
       :section="$frontmatter?.section"
       :current-page="$slidev?.nav.currentPage"
     />

@@ -6,28 +6,27 @@ fonts:
   mono: 'Fira Code'
   weights: '400,600,700'
 presentationInfo:
-  title: 'Scientific Computing'
-  subtitle: 'Kapitel 3'
+  title: 'MongoDB'
+  subtitle: 'NoSQL-Datenbanken für moderne Anwendungen'
   semester: 'Wintersemester 2025/26'
   authors:
-    - name: 'Leon Licher'
-      matrikelnummer: 1233258
-      email: 'll609274@fh-muenster.de'
-    - name: 'Daniel Fischer'
-      matrikelnummer: 1255216
-      email: 'df094981@fh-muenster.de'
-    - name: 'Mathis Arends'
-      matrikelnummer: 1241877
-      email: 'ma197404@fh-muenster.de'
+    - name: 'Max Mustermann'
+      matrikelnummer: 1234567
+      email: 'max.mustermann@fh-muenster.de'
+    - name: 'Anna Schmidt'
+      matrikelnummer: 7654321
+      email: 'anna.schmidt@fh-muenster.de'
   chapters:
     - number: 1
-      title: 'Einordnung und grundlegende Begriffe'
+      title: 'Einführung in MongoDB'
     - number: 2
-      title: 'Menschzentrierte Gestaltung'
+      title: 'Datenmodellierung'
     - number: 3
-      title: 'Verstehen und Festlegen des Nutzungskontextes'
+      title: 'CRUD-Operationen'
     - number: 4
-      title: 'Festlegen der Nutzungsanforderungen'
+      title: 'Indexierung und Performance'
+    - number: 5
+      title: 'Aggregation Framework'
 
 ---
 layout: cover
@@ -38,85 +37,94 @@ chapter: 1
 ---
 
 ---
-title: DefinitionBox Demo
-subtitle: Begriffsdefinitionen hervorheben
+title: Was ist MongoDB?
+subtitle: Definition und Kernkonzepte
 ---
 
-<DefinitionBox title="Menschzentrierte Gestaltung" source="DIN EN ISO 9241-210:2020-03, S. 9">
-  Die menschzentrierte Gestaltung ist eine "Herangehensweise bei der Gestaltung und Entwicklung von Systemen, die darauf abzielt, interaktive Systeme gebrauchstauglicher zu machen, indem sie sich auf die Verwendung des Systems konzentriert und Kenntnisse und Techniken aus den Bereichen der Arbeitswissenschaft/Ergonomie und der Gebrauchstauglichkeit anwendet".
+<DefinitionBox title="MongoDB" source="MongoDB Documentation 2024">
+  MongoDB ist eine dokumentenorientierte NoSQL-Datenbank, die Daten in flexiblen, JSON-ähnlichen Dokumenten speichert. Sie ermöglicht eine skalierbare, leistungsstarke und entwicklerfreundliche Datenverwaltung für moderne Anwendungen.
 </DefinitionBox>
 
+<Text title="Kernmerkmale">
+  MongoDB speichert Daten als <HighlightedText>BSON-Dokumente</HighlightedText> (Binary JSON) in Collections statt in traditionellen Tabellen.
+  <SubText>Diese flexible Struktur ermöglicht es, Schema-Änderungen ohne komplexe Migrationen durchzuführen</SubText>
+</Text>
+
 ---
-title: Numbered List Demo
-subtitle: Nummerierte Listen mit Tailwind
+title: Die MongoDB-Geschichte
+subtitle: Von Startup zur Enterprise-Lösung
 ---
 
-<NumberedList title="Schritte zur Benutzerforschung">
+<NumberedList title="Entwicklungsmeilensteine">
   <li>
-    <span><HighlightedText>Zielgruppe definieren</HighlightedText> - Bestimmen Sie, wer Ihre Zielbenutzer sind</span>
-    <SubText>Berücksichtigen Sie demografische, psychologische und Verhaltensmerkmale</SubText>
+    <span><HighlightedText>2007 - Gründung</HighlightedText> - 10gen entwickelt MongoDB für eigene Cloud-Plattform</span>
+    <SubText>Ursprünglich als Teil einer Platform-as-a-Service-Lösung konzipiert</SubText>
   </li>
   <li>
-    <span><HighlightedText>Forschungsmethoden wählen</HighlightedText> - Interviews, Umfragen, Beobachtungen</span>
-    <SubText>Kombinieren Sie qualitative und quantitative Methoden für umfassende Erkenntnisse</SubText>
+    <span><HighlightedText>2009 - Open Source</HighlightedText> - Veröffentlichung als eigenständige Datenbank</span>
+    <SubText>MongoDB wird unter der AGPL-Lizenz für die Community verfügbar gemacht</SubText>
   </li>
   <li>
-    <span><HighlightedText>Daten sammeln und analysieren</HighlightedText> - Führen Sie systematisch Daten ein</span>
-    <SubText>Identifizieren Sie Muster, Bedürfnisse und Schmerzpunkte in den Benutzerdaten</SubText>
+    <span><HighlightedText>2013 - MongoDB Inc.</HighlightedText> - Umbenennung und Enterprise-Fokus</span>
+    <SubText>Etablierung als führende NoSQL-Datenbank für Unternehmen</SubText>
   </li>
   <li>
-    <span><HighlightedText>Personas erstellen</HighlightedText> - Entwickeln Sie detaillierte Benutzerprofile</span>
-    <SubText>Dokumentieren Sie Ziele, Aufgaben und Herausforderungen der einzelnen Persona-Typen</SubText>
+    <span><HighlightedText>2017 - IPO</HighlightedText> - Börsengang an der NASDAQ</span>
+    <SubText>MongoDB Atlas als vollständig verwaltete Cloud-Lösung wird zum Hauptprodukt</SubText>
   </li>
 </NumberedList>
 
 ---
-title: Checkliste für die Beschreibung von Benutzermerkmalen
-subtitle: Nested BulletedList Demo
+title: MongoDB vs. Relationale Datenbanken
+subtitle: Vergleich der Ansätze
 ---
 
 <Columns>
 
-<BulletedList>
-  <li>Demografische Merkmale
+<BulletedList title="Relationale Datenbanken">
+  <li>Strukturierte Daten
     <ul>
-      <li>Altersbereich</li>
-      <li>Geschlecht</li>
+      <li>Festes Schema erforderlich</li>
+      <li>Normalisierung notwendig</li>
+      <li>Tabellen mit Fremdschlüsseln</li>
     </ul>
   </li>
-  <li>Aufgabenbezogene Merkmale
+  <li>Skalierung
     <ul>
-      <li>Wissen über die ausgeführten Aufgaben</li>
-      <li>Fähigkeiten bei der Ausführung der Aufgaben</li>
-      <li>Motivation bei der Ausführung der Aufgaben</li>
+      <li>Primär vertikale Skalierung</li>
+      <li>ACID-Transaktionen garantiert</li>
+      <li>Komplexe Joins für Relationen</li>
     </ul>
   </li>
-  <li>Arbeitsorganisatorische Merkmale
+  <li>Anwendungsfälle
     <ul>
-      <li>Bereitschaft zur Veränderung</li>
-      <li>Risikofreudigkeit</li>
-      <li>Ebene und Rolle innerhalb einer Organisationshierarchie</li>
-      <li>Anweisungsorientiertheit versus Selbstbestimmtheit</li>
+      <li>Finanzanwendungen</li>
+      <li>Legacy-Systeme</li>
+      <li>Stark strukturierte Daten</li>
     </ul>
   </li>
 </BulletedList>
 
-<BulletedList>
-  <li>Psychologische und soziale Merkmale
+<BulletedList title="MongoDB">
+  <li>Flexible Dokumente
     <ul>
-      <li>Kognitive Fähigkeiten, einschließlich Kurzzeitgedächtnis und Reaktionszeiten</li>
-      <li>Kultureller Hintergrund, einschließlich Verhaltensregeln, Denkweisen und Mentalität</li>
-      <li>Sprache(n)</li>
-      <li>Lesefähigkeit</li>
+      <li>Dynamisches Schema</li>
+      <li>Eingebettete Dokumente</li>
+      <li>Collections ohne Constraints</li>
     </ul>
   </li>
-  <li>Physische und sensorische Merkmale
+  <li>Skalierung
     <ul>
-      <li>Körpergröße</li>
-      <li>Beweglichkeit</li>
-      <li>Haptische Fähigkeiten (z. B. bei der Nutzung von Touchscreens)</li>
-      <li>Seh- und Hörfähigkeit</li>
-      <li>Fingerfertigkeit</li>
+      <li>Horizontale Skalierung (Sharding)</li>
+      <li>ACID auf Dokumentebene<Footnote text="Ab Version 4.0 auch Multi-Document Transactions" /></li>
+      <li>Embedded Documents statt Joins</li>
+    </ul>
+  </li>
+  <li>Anwendungsfälle
+    <ul>
+      <li>Web-Anwendungen</li>
+      <li>Big Data Analytics</li>
+      <li>Content Management<Footnote text="Vgl. [Chod15, S. 23-25]" /></li>
     </ul>
   </li>
 </BulletedList>
@@ -124,267 +132,824 @@ subtitle: Nested BulletedList Demo
 </Columns>
 
 ---
-title: NoSQL
-subtitle: Relevanz im Big-Data Kontext
+title: MongoDB in der Praxis
+subtitle: Einsatzgebiete und Use Cases
 ---
 
-<Quotebox source="[UXQ23, S. 39]">
-  Ein Nutzungsszenario (use scenario) ist eine "erzählende, textuelle Beschreibung,
-  wie ein Benutzer eine oder mehrere Aufgaben mit dem geplanten interaktiven
-  System ausführen wird".
+<Quotebox source="MongoDB Inc., State of Developer Data Report 2023">
+  "MongoDB wird von über 50% der Fortune 500-Unternehmen eingesetzt und verarbeitet täglich über 100 Milliarden Dokumente. Die dokumentenorientierte Architektur ermöglicht Entwicklern, 5x schneller zu iterieren als mit traditionellen relationalen Datenbanken."
 </Quotebox>
 
-<BulletedList title="Anmerkungen">
+<BulletedList title="Erfolgreiche Implementierungen">
   <li>
-    NoSQL-Datenbanken sind flexibel<Footnote text="Quelle: [GeT23, S. 42]" />
+    <HighlightedText>E-Commerce</HighlightedText> - Produktkataloge mit flexiblen Attributen
+    <SubText>Beispiel: eBay nutzt MongoDB für Produktsuche und Empfehlungen</SubText>
   </li>
   <li>
-    Sie skalieren horizontal<Footnote text="Vgl. MongoDB Documentation 2024" />
+    <HighlightedText>Social Media</HighlightedText> - Echtzeit-Feeds und Benutzerprofile
+    <SubText>Skalierbarkeit für Millionen simultaner Zugriffe</SubText>
+  </li>
+  <li>
+    <HighlightedText>IoT-Anwendungen</HighlightedText> - Zeitreihendaten von Sensoren
+    <SubText>Time-Series Collections optimiert für IoT-Datenströme</SubText>
   </li>
 </BulletedList>
+
 ---
-title: Text Komponente Demo
-subtitle: Mit SubText Beispielen
+layout: chapter-intro
+chapter: 2
+---
+
+---
+title: Dokumentenstruktur
+subtitle: BSON und JSON im Vergleich
 ---
 
 <Columns>
 
-<Text title="Text Komponente">
-  Dies ist ein normaler Text mit der <HighlightedText>highlight</HighlightedText> Klasse für wichtige Begriffe.
-  <SubText>Dies ist ein SubText, der zusätzliche Informationen liefert und in grauer Farbe dargestellt wird.</SubText>
-</Text>
+<Code title="JSON Dokument">
 
-<Text title="Weiteres Beispiel">
-  Die <HighlightedText>Text-Komponente</HighlightedText> folgt dem gleichen Pattern wie BulletedList.
-  <SubText>Sie unterstützt auch <HighlightedText>Highlights</HighlightedText> innerhalb des SubTexts für besondere Hervorhebungen.</SubText>
-</Text>
+```json
+{
+  "name": "Max Mustermann",
+  "email": "max@example.com",
+  "age": 28,
+  "registered": "2024-01-15"
+}
+```
+
+</Code>
+
+<Code title="BSON mit erweiterten Typen">
+
+```javascript
+{
+  _id: ObjectId("507f1f77bcf86cd799439011"),
+  name: "Max Mustermann",
+  email: "max@example.com",
+  age: NumberInt(28),
+  registered: ISODate("2024-01-15T10:30:00Z"),
+  active: true,
+  tags: ["premium", "verified"]
+}
+```
+
+</Code>
 
 </Columns>
 
----
-title: HighlightBox Demo
-subtitle: Hervorgehobene Infoboxen
----
-
-<HighlightBox title="Farbwiedergabe">
-  Ausgabegeräte können nur einen Ausschnitt eines Farbraums darstellen, den sog. Gamut. Die Wiedergabe einer Farbe kann zudem von Gerät zu Gerät variieren (z. B. IPS vs. OLED-Panel).
+<HighlightBox title="BSON-Vorteile">
+  BSON erweitert JSON um zusätzliche Datentypen wie ObjectId, Date, Binary Data und NumberDecimal. Dies ermöglicht effiziente Speicherung und schnelle Traversierung von Dokumenten.
 </HighlightBox>
 
 ---
-title: Table Komponente Demo
-subtitle: Mit alternierenden Zeilen
+title: Embedded Documents vs. Referenzen
+subtitle: Datenmodellierungsstrategien
 ---
 
 <Table 
-  :headers="['Auszug aus dem Ist-Szenario', 'Identifizierte Erfordernisse']"
+  :headers="['Embedded Documents', 'Referenzen']"
   :columnWidths="['50%', '50%']"
   :rows="[
     [
-      'Patienten müssen oft über den vereinbarten Termin hinaus auf ihre Behandlung warten. Das Warten ist für die Patienten sehr ärgerlich, vor allem, wenn sie bis zu 90 Minuten im Wartezimmer sitzen müssen, ohne dass klar ist, wie lange es noch dauert, bis sie an der Reihe sind.',
-      'Der Patient (Benutzergruppe) muss vor Ankunft in der Arztpraxis wissen, wann der vereinbarte Behandlungstermin tatsächlich beginnt (Information), um die verbleibende Zeit sinnvoll nutzen zu können (beabsichtigtes Ergebnis).'
+      '<strong>Vorteile:</strong><br>• Bessere Read-Performance<br>• Ein Query für alle Daten<br>• Atomare Operationen<br>• Datenlokalität',
+      '<strong>Vorteile:</strong><br>• Kleinere Dokumente<br>• Weniger Daten-Duplikation<br>• Flexible Updates<br>• Vermeidung des 16MB Limits'
     ],
     [
-      'Die Patienten vereinbaren ihre Termine oft lange im Voraus, da gute Ärzte nicht kurzfristig verfügbar sind.',
-      'Der Patient (Benutzergruppe) muss einen vereinbarten Behandlungstermin haben (Ressource), um zum vereinbarten Zeitpunkt behandelt zu werden (beabsichtigtes Ergebnis).'
+      '<strong>Anwendung:</strong><br>One-to-One und One-to-Few Beziehungen',
+      '<strong>Anwendung:</strong><br>One-to-Many und Many-to-Many Beziehungen'
     ],
     [
-      'Allgemeinmediziner haben es mit einer großen Vielfalt von Krankheiten zu tun. Sie stellen Diagnosen jedoch schnell, und die Patienten verlassen sich auf die von ihnen verschriebenen Behandlungen.',
-      'Der Arzt (Benutzergruppe) muss die Kompetenz besitzen, die richtige Diagnose zu stellen (Kompetenz), um die richtige Therapie zu bestimmen (beabsichtigtes Ergebnis).'
+      '<strong>Beispiel:</strong><br>Benutzer mit Adresse<br><code>{ user: {...}, address: {...} }</code>',
+      '<strong>Beispiel:</strong><br>Benutzer mit Bestellungen<br><code>{ user_id: ObjectId(...) }</code>'
     ]
   ]"
-  caption="Beispiele für identifizierte Erfordernisse in Nutzungskontextinformationen<sup>1</sup>"
+  caption="Entscheidungshilfe für Datenmodellierung<sup>1</sup>"
 />
 
 ---
-title: Image Komponente Demo
-subtitle: Mit Caption und Source
+title: Schema Design Patterns
+subtitle: Best Practices für effiziente Datenmodelle
 ---
-<Image 
-  title="Ionic Framework Beispiel"
-  src="/images/fh-logo.jpg"
-  alt="FH Münster Logo"
-  caption="Jedes <ion-item>-Element ist ein Listeneintrag (Zeile); es kann mehrere UI-Elemente zu einem Listeneintrag bündeln"
-  source="Quelle: FH Münster"
-  maxWidth="500px"
-/>
 
-<Text title="Image Features">
-  Die Image-Komponente unterstützt <HighlightedText>Titel</HighlightedText>, <HighlightedText>Caption</HighlightedText> und <HighlightedText>Source</HighlightedText>.
-  <SubText>Perfekt für annotierte Bilder in Präsentationen</SubText>
-</Text>
+<NumberedList title="Wichtige Design Patterns">
+  <li>
+    <span><HighlightedText>Attribute Pattern</HighlightedText> - Flexible Attribute in Sub-Dokumenten</span>
+    <SubText>Ideal für Produkte mit vielen variablen Eigenschaften</SubText>
+  </li>
+  <li>
+    <span><HighlightedText>Bucket Pattern</HighlightedText> - Gruppierung von Zeitreihendaten</span>
+    <SubText>Reduziert Anzahl der Dokumente für IoT- und Monitoring-Daten</SubText>
+  </li>
+  <li>
+    <span><HighlightedText>Subset Pattern</HighlightedText> - Nur relevante Daten laden</span>
+    <SubText>Speichert häufig benötigte Daten direkt im Hauptdokument</SubText>
+  </li>
+  <li>
+    <span><HighlightedText>Extended Reference Pattern</HighlightedText> - Wichtige Felder duplizieren</span>
+    <SubText>Vermeidet Joins durch gezielte Denormalisierung</SubText>
+  </li>
+</NumberedList>
+
 ---
-title: Code Komponente Demo
-subtitle: Mit Syntax-Highlighting
+title: E-Commerce Datenmodell
+subtitle: Praktische Anwendung der Patterns
 ---
-<Columns>
 
-<Code title="TypeScript Beispiel">
+<Code title="Produkt mit Embedded Documents und Referenzen">
 
-```typescript
-import { IonButton } from '@ionic/core/components/ion-button.js';
-import { IonIcon } from 'ionicons/components/ion-icon.js';
-import { initialize } from '@ionic/core/components';
-import { star } from 'ionicons/icons';
-
-initialize();
-addIcons({ 'star': star });
-customElements.define('ion-button', IonButton);
-customElements.define('ion-icon', IonIcon);
+```javascript
+{
+  _id: ObjectId("..."),
+  sku: "LAPTOP-X1-2024",
+  name: "ProBook X1 Laptop",
+  category: "Electronics",
+  price: {
+    amount: 1299.99,
+    currency: "EUR"
+  },
+  // Embedded: Häufig benötigte Daten
+  manufacturer: {
+    name: "TechCorp",
+    country: "Germany"
+  },
+  // Attribute Pattern für flexible Specs
+  specifications: [
+    { key: "RAM", value: "16GB", unit: "GB" },
+    { key: "Storage", value: "512GB", unit: "GB" },
+    { key: "Display", value: "15.6", unit: "inch" }
+  ],
+  // Referenz zu Reviews (One-to-Many)
+  reviews_count: 247,
+  avg_rating: 4.5,
+  stock: {
+    available: 42,
+    warehouse_id: ObjectId("...")
+  }
+}
 ```
 
 </Code>
 
-<Code title="Vue Template Beispiel">
+---
+layout: chapter-intro
+chapter: 3
+---
 
-```vue
-<ion-app>
-  <ion-header>
-    <ion-toolbar><ion-title>Listen</ion-title></ion-toolbar>
-  </ion-header>
-  <ion-content>
-    <ion-list>
-      <ion-list-header>Title</ion-list-header>
-      <ion-item>Non clickable</ion-item>
-      <ion-item button>Clickable</ion-item>
-    </ion-list>
-  </ion-content>
-</ion-app>
+---
+title: CRUD-Grundlagen
+subtitle: Create, Read, Update, Delete
+---
+
+<BulletedList title="MongoDB Shell Kommandos">
+  <li>
+    <HighlightedText>Create</HighlightedText> - Dokumente einfügen
+    <ul>
+      <li><code>insertOne()</code> - Ein einzelnes Dokument</li>
+      <li><code>insertMany()</code> - Multiple Dokumente</li>
+    </ul>
+  </li>
+  <li>
+    <HighlightedText>Read</HighlightedText> - Dokumente abfragen
+    <ul>
+      <li><code>find()</code> - Alle passenden Dokumente</li>
+      <li><code>findOne()</code> - Erstes passendes Dokument</li>
+    </ul>
+  </li>
+  <li>
+    <HighlightedText>Update</HighlightedText> - Dokumente modifizieren
+    <ul>
+      <li><code>updateOne()</code> / <code>updateMany()</code></li>
+      <li><code>replaceOne()</code> - Komplettes Dokument ersetzen</li>
+    </ul>
+  </li>
+  <li>
+    <HighlightedText>Delete</HighlightedText> - Dokumente entfernen
+    <ul>
+      <li><code>deleteOne()</code> / <code>deleteMany()</code></li>
+    </ul>
+  </li>
+</BulletedList>
+
+---
+title: Insert Operations
+subtitle: Dokumente erstellen
+---
+
+```javascript {2-9|11-25}
+// insertOne - Einzelnes Dokument einfügen
+db.users.insertOne({
+  name: "Anna Schmidt",
+  email: "anna@example.com",
+  age: 32,
+  roles: ["user", "admin"],
+  createdAt: new Date()
+});
+
+// insertMany - Multiple Dokumente auf einmal
+db.products.insertMany([
+  {
+    name: "Laptop",
+    price: 999.99,
+    category: "Electronics",
+    inStock: true
+  },
+  {
+    name: "Maus",
+    price: 24.99,
+    category: "Accessories",
+    inStock: true
+  }
+]);
+```
+
+<Text title="Wichtige Hinweise">
+  MongoDB generiert automatisch eine <HighlightedText>_id</HighlightedText> wenn keine angegeben wird.
+  <SubText>Die _id ist einzigartig innerhalb einer Collection und wird als ObjectId gespeichert</SubText>
+</Text>
+
+---
+title: Query Operations
+subtitle: Dokumente finden und filtern
+---
+
+<Columns>
+
+<Code title="Einfache Queries">
+
+```javascript
+// Alle Dokumente
+db.users.find()
+
+// Mit Filter
+db.users.find({ 
+  age: { $gte: 18 } 
+})
+
+// Spezifische Felder
+db.users.find(
+  { active: true },
+  { name: 1, email: 1 }
+)
+
+// Sortierung
+db.users.find()
+  .sort({ age: -1 })
+  .limit(10)
+```
+
+</Code>
+
+<Code title="Komplexe Queries">
+
+```javascript
+// Logische Operatoren
+db.products.find({
+  $and: [
+    { price: { $lt: 100 } },
+    { inStock: true }
+  ]
+})
+
+// Array-Queries
+db.users.find({
+  roles: "admin"
+})
+
+// Regex-Suche
+db.users.find({
+  email: /^anna/i
+})
 ```
 
 </Code>
 
 </Columns>
----
-title: Nativ Slidev Code-Blöcke
-subtitle: Mit Line Highlighting
----
-
-# Mit Slidev Features
-
-Slidev unterstützt Line Highlighting direkt:
-
-```typescript {2,5-7}
-import { IonButton } from '@ionic/core/components/ion-button.js';
-import { IonIcon } from 'ionicons/components/ion-icon.js';
-import { initialize } from '@ionic/core/components';
-import { star } from 'ionicons/icons';
-
-initialize();
-addIcons({ 'star': star });
-```
-
-<BulletedList title="Slidev Code Features">
-  <li>
-    <HighlightedText>Line Highlighting</HighlightedText>: Mit {2,5-7} Syntax
-    <SubText>Hebt bestimmte Zeilen hervor</SubText>
-  </li>
-  <li>
-    <HighlightedText>Shiki Syntax</HighlightedText>: Automatisches Highlighting
-    <SubText>Unterstützt alle gängigen Sprachen</SubText>
-  </li>
-</BulletedList>
 
 ---
-title: Quellen
-subtitle: Literaturverzeichnis
+title: Update Operatoren
+subtitle: Flexible Dokumentmodifikation
 ---
 
-<Container>
-  <CitationTable 
-    title="Quellen"
-    :citations="[
-      { id: '[GeT23]', text: 'Geis, T.; Tesch, G.: <em>Basiswissen Usability und User Experience.</em> 2. Aufl., dpunkt.verlag, 2023' },
-      { id: '[GeP18]', text: 'Geis, T.; Polkehn, K.: <em>Praxiswissen User Requirements.</em> dpunkt.verlag, 2018' },
-      { id: '[UXQ21]', text: 'UXQB e. V.: <em>CPUX-DS Curriculum und Glossar.</em> Version 1.01a DE, www.uxqb.org, 2021' },
-      { id: '[UXQ23a]', text: 'UXQB e. V.: <em>CPUX-F Curriculum - Certified Professional for Usability and User Experience Foundation Level.</em> Version 4.01 DE, www.uxqb.org, 2023' },
-      { id: '[UXQ23b]', text: 'UXQB e. V.: <em>CPUX-UR Curriculum - Certified Professional for Usability and User Experience \u2013 User Requirements Engineering.</em> Version 3.2.2 DE, www.uxqb.org, 2023' }
-    ]"
-  />
-</Container>
-
----
-title: Quellen
-subtitle: Normen und Standards
----
-
-<CitationTable 
-  title="Normen"
-  :citations="[
-    { id: 'DIN EN ISO 9241-11:2018', text: 'Ergonomie der Mensch-System-Interaktion \u2013 Teil 11: Gebrauchstauglichkeit: Begriffe und Konzepte (ISO 9241-11:2018); Deutsche Fassung EN ISO 9241-11:2018, November 2018' },
-    { id: 'DIN EN ISO 9241-110:2020', text: 'Ergonomie der Mensch-System-Interaktion \u2013 Teil 110: Interaktionsprinzipien (ISO 9241-110:2020); Deutsche Fassung EN ISO 9241-110:2020, Oktober 2020' },
-    { id: 'DIN EN ISO 9241-210:2020', text: 'Ergonomie der Mensch-System-Interaktion \u2013 Teil 210: Menschzentrierte Gestaltung interaktiver Systeme (ISO 9241-210:2019); Deutsche Fassung EN ISO 9241-210:2019, M\u00e4rz 2020' }
+<Table 
+  :headers="['Operator', 'Beschreibung', 'Beispiel']"
+  :columnWidths="['20%', '40%', '40%']"
+  :rows="[
+    [
+      `<code>$set</code>`,
+      `Setzt Feldwerte oder fügt neue Felder hinzu`,
+      `<code>{ $set: { age: 30 } }</code>`
+    ],
+    [
+      `<code>$inc</code>`,
+      `Inkrementiert numerische Werte`,
+      `<code>{ $inc: { views: 1 } }</code>`
+    ],
+    [
+      `<code>$push</code>`,
+      `Fügt Element zu Array hinzu`,
+      `<code>{ $push: { tags: &quot;new&quot; } }</code>`
+    ],
+    [
+      `<code>$pull</code>`,
+      `Entfernt Element aus Array`,
+      `<code>{ $pull: { tags: &quot;old&quot; } }</code>`
+    ],
+    [
+      `<code>$unset</code>`,
+      `Entfernt Feld aus Dokument`,
+      `<code>{ $unset: { tempField: &quot;&quot; } }</code>`
+    ],
+    [
+      `<code>$rename</code>`,
+      `Benennt Feld um`,
+      `<code>{ $rename: { old: &quot;new&quot; } }</code>`
+    ]
   ]"
+  caption="Wichtige Update-Operatoren in MongoDB"
 />
 
 ---
-title: Mermaid Diagramm Demo
-subtitle: Visualisierung mit Mermaid.js
+title: Update Beispiele
+subtitle: Praktische Anwendung
 ---
+
+```javascript {1-4|6-11|13-17}
+// Einzelnes Feld aktualisieren
+db.users.updateOne(
+  { email: "max@example.com" },
+  { $set: { lastLogin: new Date() } }
+);
+
+// Multiple Felder und Array-Operation
+db.products.updateMany(
+  { category: "Electronics" },
+  { $set: { featured: true }, $inc: { views: 1 } }
+);
+
+// Upsert - Update oder Insert wenn nicht vorhanden
+db.settings.updateOne(
+  { key: "theme" },
+  { $set: { value: "dark", updatedAt: new Date() } },
+  { upsert: true }
+);
+```
+
+<HighlightBox title="Atomare Operationen">
+  Alle Update-Operationen auf ein einzelnes Dokument sind in MongoDB atomar. Das bedeutet, dass entweder alle Änderungen angewendet werden oder keine.
+</HighlightBox>
+
+---
+layout: chapter-intro
+chapter: 4
+---
+
+---
+title: Warum Indexierung?
+subtitle: Performance-Optimierung verstehen
+---
+
+<Quotebox source="MongoDB Performance Best Practices 2024">
+  "Queries ohne Index erfordern einen Collection Scan, der alle Dokumente durchsucht. Mit einem geeigneten Index kann die Query-Zeit von Sekunden auf Millisekunden reduziert werden – oft um den Faktor 1000 oder mehr."
+</Quotebox>
+
+<Columns>
+
+<Text title="Ohne Index">
+  MongoDB muss <HighlightedText>jedes Dokument</HighlightedText> in der Collection scannen.
+  <SubText>O(n) Komplexität - Performance verschlechtert sich linear mit Datenmenge</SubText>
+</Text>
+
+<Text title="Mit Index">
+  MongoDB nutzt eine <HighlightedText>B-Tree Struktur</HighlightedText> für schnelle Lookups.
+  <SubText>O(log n) Komplexität - Skaliert effizient auch bei Millionen Dokumenten</SubText>
+</Text>
+
+</Columns>
+
+---
+title: Index-Typen
+subtitle: Verschiedene Strategien für verschiedene Anforderungen
+---
+
+<NumberedList title="Wichtige Index-Typen">
+  <li>
+    <span><HighlightedText>Single Field Index</HighlightedText> - Index auf einem einzelnen Feld</span>
+    <SubText>Standardfall für einfache Queries: <code>db.users.createIndex({ email: 1 })</code></SubText>
+  </li>
+  <li>
+    <span><HighlightedText>Compound Index</HighlightedText> - Index über mehrere Felder</span>
+    <SubText>Optimiert für Queries mit mehreren Bedingungen: <code>{ age: 1, city: 1 }</code></SubText>
+  </li>
+  <li>
+    <span><HighlightedText>Text Index</HighlightedText> - Volltextsuche über String-Felder</span>
+    <SubText>Ermöglicht <code>$text</code> Queries für Suchfunktionalität</SubText>
+  </li>
+  <li>
+    <span><HighlightedText>Geospatial Index</HighlightedText> - Für geografische Koordinaten</span>
+    <SubText>Unterstützt Queries wie "Finde alle Restaurants im Umkreis von 5km"</SubText>
+  </li>
+  <li>
+    <span><HighlightedText>Unique Index</HighlightedText> - Erzwingt eindeutige Werte</span>
+    <SubText>Verhindert Duplikate: <code>{ email: 1 }, { unique: true }</code></SubText>
+  </li>
+</NumberedList>
+
+---
+title: Index erstellen und verwalten
+subtitle: Praktische Beispiele
+---
+
+<Code title="Index-Management Kommandos">
+
+```javascript
+// Single Field Index erstellen
+db.users.createIndex({ email: 1 });  // 1 = aufsteigend, -1 = absteigend
+
+// Compound Index für häufige Query-Kombination
+db.orders.createIndex({ customerId: 1, orderDate: -1 });
+
+// Unique Index für eindeutige Werte
+db.users.createIndex({ username: 1 }, { unique: true });
+
+// Text Index für Volltextsuche
+db.articles.createIndex({ title: "text", content: "text" });
+
+// Partial Index - nur für bestimmte Dokumente
+db.orders.createIndex(
+  { orderDate: 1 },
+  { partialFilterExpression: { status: "active" } }
+);
+
+// Alle Indexes anzeigen
+db.users.getIndexes();
+
+// Index löschen
+db.users.dropIndex("email_1");
+```
+
+</Code>
+
+---
+title: Explain Plan
+subtitle: Query-Performance analysieren
+---
+
+```javascript
+// Query mit explain() analysieren
+db.users.find({ age: { $gt: 25 } }).explain("executionStats");
+```
+
+<Table 
+  :headers="['Metrik', 'Bedeutung', 'Zielwert']"
+  :columnWidths="['30%', '45%', '25%']"
+  :rows="[
+    [
+      `<code>executionTimeMillis</code>`,
+      `Gesamtdauer der Query-Ausführung`,
+      `< 100ms`
+    ],
+    [
+      `<code>totalDocsExamined</code>`,
+      `Anzahl untersuchter Dokumente`,
+      `≈ nReturned`
+    ],
+    [
+      `<code>nReturned</code>`,
+      `Anzahl zurückgegebener Dokumente`,
+      `Abhängig von Query`
+    ],
+    [
+      `<code>stage</code>`,
+      `Query-Strategie (IXSCAN vs COLLSCAN)`,
+      `IXSCAN`
+    ],
+    [
+      `<code>indexName</code>`,
+      `Verwendeter Index`,
+      `Passender Index`
+    ]
+  ]"
+  caption="Wichtige Metriken aus dem Execution Plan"
+/>
+
+---
+title: Performance-Optimierung
+subtitle: Best Practices
+---
+
+<Columns>
+
+<BulletedList title="Index Design">
+  <li>ESR-Regel beachten
+    <ul>
+      <li><strong>E</strong>quality - Gleichheitsfilter zuerst</li>
+      <li><strong>S</strong>ort - Sortierfelder danach</li>
+      <li><strong>R</strong>ange - Bereichsfilter zuletzt</li>
+    </ul>
+  </li>
+  <li>Index-Effizienz
+    <ul>
+      <li>Selektivität priorisieren</li>
+      <li>Compound Indexes optimal nutzen</li>
+      <li>Nicht zu viele Indexes<Footnote text="Jeder Index kostet Speicher und verlangsamt Writes" /></li>
+    </ul>
+  </li>
+</BulletedList>
+
+<BulletedList title="Query-Optimierung">
+  <li>Projection nutzen
+    <ul>
+      <li>Nur benötigte Felder abfragen</li>
+      <li>Reduziert Netzwerk-Traffic</li>
+      <li>Verbessert Speicher-Effizienz</li>
+    </ul>
+  </li>
+  <li>Monitoring
+    <ul>
+      <li>Slow Query Log aktivieren</li>
+      <li>Database Profiler nutzen<Footnote text="db.setProfilingLevel(1, { slowms: 100 })" /></li>
+      <li>MongoDB Atlas Monitoring</li>
+    </ul>
+  </li>
+</BulletedList>
+
+</Columns>
+
+---
+layout: chapter-intro
+chapter: 5
+---
+
+---
+title: Aggregation Framework
+subtitle: Leistungsstarke Datenverarbeitung
+---
+
+<DefinitionBox title="Aggregation Pipeline" source="MongoDB Manual, Aggregation">
+  Die Aggregation Pipeline ist ein Framework zur Datenverarbeitung, das Dokumente durch eine Reihe von Stages transformiert. Jede Stage führt eine Operation auf den Dokumenten aus und gibt das Ergebnis an die nächste Stage weiter.
+</DefinitionBox>
+
+<HighlightBox title="Pipeline-Konzept">
+  Ähnlich wie Unix Pipes: Daten fließen durch mehrere Verarbeitungsschritte, wobei jeder Schritt das Ergebnis des vorherigen transformiert. Dies ermöglicht komplexe Analysen mit lesbarem, zusammensetzbarem Code.
+</HighlightBox>
+
+---
+title: Wichtige Aggregation Stages
+subtitle: Die Building Blocks der Pipeline
+---
+
+<Table 
+  :headers="['Stage', 'Funktion', 'Verwendung']"
+  :columnWidths="['20%', '40%', '40%']"
+  :rows="[
+    [
+      `<code>$match</code>`,
+      `Filtert Dokumente (wie find())`,
+      `Sollte früh in Pipeline für Performance`
+    ],
+    [
+      `<code>$group</code>`,
+      `Gruppiert Dokumente und berechnet Aggregationen`,
+      `Summen, Durchschnitte, Zählen`
+    ],
+    [
+      `<code>$project</code>`,
+      `Formt Dokumente um und wählt Felder`,
+      `Felder umbenennen, berechnen, ein-/ausblenden`
+    ],
+    [
+      `<code>$sort</code>`,
+      `Sortiert Dokumente`,
+      `Vor $limit für Top-N Queries`
+    ],
+    [
+      `<code>$limit</code>`,
+      `Begrenzt Anzahl der Dokumente`,
+      `Pagination, Top-N Ergebnisse`
+    ],
+    [
+      `<code>$lookup</code>`,
+      `Führt Left Outer Join durch`,
+      `Verknüpft Collections (wie SQL JOIN)`
+    ],
+    [
+      `<code>$unwind</code>`,
+      `Dekonstruiert Arrays`,
+      `Pro Array-Element ein Dokument`
+    ]
+  ]"
+  caption="Essenzielle Aggregation Stages"
+/>
+
+---
+title: Aggregation Beispiel 1
+subtitle: Verkaufsstatistiken berechnen
+---
+
+```javascript {1-3|4-9|10-14|15-17}
+// Gesamtumsatz pro Produkt-Kategorie berechnen
+db.orders.aggregate([
+  // Stage 1: Nur abgeschlossene Bestellungen
+  {
+    $match: {
+      status: "completed",
+      orderDate: { $gte: ISODate("2024-01-01") }
+    }
+  },
+  // Stage 2: Nach Kategorie gruppieren und summieren
+  {
+    $group: {
+      _id: "$category",
+      totalRevenue: { $sum: "$amount" },
+      orderCount: { $count: {} },
+      avgOrderValue: { $avg: "$amount" }
+    }
+  },
+  // Stage 3: Nach Umsatz sortieren
+  {
+    $sort: { totalRevenue: -1 }
+  }
+]);
+```
+
+<Text title="Ergebnis-Format">
+  Liefert <HighlightedText>aggregierte Daten</HighlightedText> pro Kategorie mit Umsatz, Anzahl und Durchschnitt.
+  <SubText>Ideal für Dashboards und Business Intelligence Reports</SubText>
+</Text>
+
+---
+title: Aggregation Beispiel 2
+subtitle: Lookup für Collection-Joins
+---
+
+<Code title="Bestellungen mit Kundeninformationen anreichern">
+
+```javascript
+db.orders.aggregate([
+  // Stage 1: Recent orders
+  {
+    $match: {
+      orderDate: { $gte: ISODate("2024-12-01") }
+    }
+  },
+  // Stage 2: Join mit customers collection
+  {
+    $lookup: {
+      from: "customers",
+      localField: "customerId",
+      foreignField: "_id",
+      as: "customerInfo"
+    }
+  },
+  // Stage 3: Customer-Array entpacken
+  {
+    $unwind: "$customerInfo"
+  },
+  // Stage 4: Output formatieren
+  {
+    $project: {
+      orderNumber: 1,
+      total: 1,
+      "customer.name": "$customerInfo.name",
+      "customer.email": "$customerInfo.email"
+    }
+  }
+]);
+```
+
+</Code>
+
+---
+title: Aggregation Visualisierung
+subtitle: Pipeline-Datenfluss
+---
+
 ```mermaid
-graph LR
-    A[Client/Browser] -->|HTTP Request| B[Web Server]
-    B -->|API Call| C[Application Server]
-    C -->|Query| D[(MongoDB)]
-    C -->|Cache| E[(Redis)]
-    D -->|Data| C
-    E -->|Cached Data| C
-    C -->|Response| B
-    B -->|HTML/JSON| A
+graph TD
+    A[Alle Orders<br/>100.000 Dokumente] -->|$match| B[Filtered Orders<br/>5.000 Dokumente<br/>status: completed]
+    B -->|$lookup| C[Orders + Customer Data<br/>5.000 angereicherte Docs]
+    C -->|$unwind| D[Flattened Array<br/>5.000 Docs]
+    D -->|$group| E[Grouped by Category<br/>15 Kategorien]
+    E -->|$sort| F[Sorted Results<br/>Top Categories]
+    F -->|$limit| G[Final Output<br/>Top 5 Kategorien]
     
     style A fill:#e1f5ff
     style B fill:#fff4e1
     style C fill:#ffe1f5
     style D fill:#e1ffe1
     style E fill:#ffe1e1
+    style F fill:#f5e1ff
+    style G fill:#90EE90
 ```
 
-<BulletedList title="Vorteile von Mermaid">
-  <li>
-    <HighlightedText>Einfache Syntax</HighlightedText> zur Diagrammerstellung
-    <SubText>Diagramme werden aus Text generiert und sind versionierbar</SubText>
-  </li>
-  <li>
-    <HighlightedText>Verschiedene Diagrammtypen</HighlightedText> unterstützt
-    <SubText>Flowcharts, Sequence Diagrams, Class Diagrams, etc.</SubText>
-  </li>
-</BulletedList>
----
-title: PlantUML Diagramm Demo
-subtitle: UML-Diagramme mit PlantUML
----
-
-```plantuml
-@startuml
-actor Benutzer
-participant "Web App" as App
-participant "Auth Service" as Auth
-database "User DB" as DB
-
-Benutzer -> App: Login Request
-App -> Auth: Validate Credentials
-Auth -> DB: Query User
-DB --> Auth: User Data
-Auth --> App: JWT Token
-App --> Benutzer: Login Success
-
-Benutzer -> App: API Request + Token
-App -> Auth: Verify Token
-Auth --> App: Token Valid
-App --> Benutzer: Protected Resource
-@enduml
-```
-
-<Text title="Anwendungsfälle">
-  PlantUML eignet sich besonders für <HighlightedText>UML-Diagramme</HighlightedText> und technische Dokumentation.
-  <SubText>Ideal für Sequenzdiagramme, Klassendiagramme und Komponentendiagramme</SubText>
+<Text title="Pipeline-Effizienz">
+  Jede Stage reduziert die Datenmenge - <HighlightedText>$match früh platzieren</HighlightedText> für beste Performance.
+  <SubText>MongoDB optimiert die Pipeline automatisch, z.B. durch Verschieben von $match vor $sort</SubText>
 </Text>
 
 ---
-title: Quellen
-subtitle: Abbildungen
+title: Analytics Dashboard
+subtitle: Komplexe Business-Anforderungen
 ---
 
-<FigureList title="Abbildungen" idWidth="150px" />
+<Columns>
+
+<BulletedList title="Anforderungen">
+  <li>Analyse
+    <ul>
+      <li>Top 10 Kunden nach Umsatz</li>
+      <li>Monatliche Trends</li>
+      <li>Durchschnittlicher Warenkorb</li>
+    </ul>
+  </li>
+  <li>Zeitraum
+    <ul>
+      <li>Letztes Quartal</li>
+      <li>Gruppiert nach Monat</li>
+      <li>Nur aktive Kunden</li>
+    </ul>
+  </li>
+</BulletedList>
+
+<Code title="Aggregation Query">
+
+```javascript
+db.orders.aggregate([
+  {
+    $match: {
+      orderDate: {
+        $gte: ISODate("2024-10-01"),
+        $lt: ISODate("2025-01-01")
+      },
+      status: "completed"
+    }
+  },
+  {
+    $group: {
+      _id: {
+        customer: "$customerId",
+        month: { $month: "$orderDate" }
+      },
+      revenue: { $sum: "$total" },
+      orders: { $count: {} }
+    }
+  },
+  {
+    $group: {
+      _id: "$_id.customer",
+      totalRevenue: { $sum: "$revenue" },
+      avgBasket: { 
+        $avg: "$revenue" 
+      }
+    }
+  },
+  { $sort: { totalRevenue: -1 } },
+  { $limit: 10 }
+]);
+```
+
+</Code>
+
+</Columns>
+
+---
+title: Quellen
+subtitle: Literatur und Dokumentation
+---
+
+<CitationTable 
+  title="Quellen"
+  :citations="[
+    { id: '[Chod15]', text: `Chodorow, K.: <em>MongoDB: The Definitive Guide.</em> 3rd Edition, O'Reilly Media, 2015` },
+    { id: '[Brad19]', text: `Bradshaw, S.; Brazil, E.; Chodorow, K.: <em>MongoDB: The Definitive Guide.</em> 3rd Edition, O'Reilly Media, 2019` },
+    { id: '[MonDB24a]', text: `MongoDB Inc.: <em>MongoDB Manual.</em> Version 7.0, https://docs.mongodb.com/manual/, 2024` },
+    { id: '[MonDB24b]', text: `MongoDB Inc.: <em>MongoDB Schema Design Best Practices.</em> https://www.mongodb.com/developer/products/mongodb/schema-design-best-practices/, 2024` },
+    { id: '[MonDB24c]', text: `MongoDB Inc.: <em>State of Developer Data Report.</em> https://www.mongodb.com/developer-data-report, 2023` }
+  ]"
+></CitationTable>
+
+
+---
+title: Weitere Ressourcen
+subtitle: Online-Materialien und Tools
+---
+
+<Container>
+  <CitationTable 
+    title="Nützliche Links"
+    :citations="[
+      { id: 'MongoDB University', text: 'Kostenlose Online-Kurse und Zertifizierungen: <em>https://university.mongodb.com</em>' },
+      { id: 'MongoDB Compass', text: 'GUI-Tool für MongoDB: <em>https://www.mongodb.com/products/compass</em>' },
+      { id: 'MongoDB Atlas', text: 'Cloud-hosted MongoDB: <em>https://www.mongodb.com/cloud/atlas</em>' },
+      { id: 'Community Forum', text: 'MongoDB Community: <em>https://www.mongodb.com/community/forums</em>' }
+    ]"
+  />
+</Container>
+
+<HighlightBox title="Nächste Schritte">
+  MongoDB bietet umfangreiche Features wie Replica Sets, Sharding, Change Streams und Transactions. Die offizielle Dokumentation und MongoDB University bieten detaillierte Tutorials für fortgeschrittene Themen.
+</HighlightBox>
 
 ---
 layout: closing

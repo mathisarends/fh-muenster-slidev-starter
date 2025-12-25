@@ -19,7 +19,7 @@ defineProps({
     </div>
 
     <div class="bg-gray-100 border-l-4 border-fh-blue -mt-0.5 px-2.5 py-2">
-      <p class="text-gray-600 text-[0.95rem] italic leading-relaxed m-0">
+      <p class="text-gray-600 text-[0.88rem] italic leading-normal m-0">
         <slot />
       </p>
 
