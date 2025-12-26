@@ -12,7 +12,7 @@ defineProps({
     <p class="text-gray-700 text-base leading-normal m-0 pr-24">
       <slot />
     </p>
-    <span v-if="source" class="absolute bottom-3 right-4 text-gray-500 text-sm">
+    <span v-if="source" class="absolute bottom-3 right-4 text-gray-500 text-xs">
       {{ source }}
     </span>
   </div>

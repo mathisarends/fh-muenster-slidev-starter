@@ -79,7 +79,7 @@ const getColumnWidth = (index, header) => {
 
   <p
     v-if="caption"
-    class="px-1.5 text-xs text-gray-500 text-left leading-tight"
+    class="px-2 -mt-1.5 text-xs text-gray-500 text-left leading-tight"
     v-html="caption"
   ></p>
 </template>

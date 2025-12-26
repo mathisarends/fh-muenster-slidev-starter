@@ -220,7 +220,7 @@ subtitle: Datenmodellierungsstrategien
       '<strong>Beispiel:</strong><br>Benutzer mit Bestellungen<br><code>{ user_id: ObjectId(...) }</code>'
     ]
   ]"
-  caption="Entscheidungshilfe für Datenmodellierung<sup>1</sup>"
+  caption="Entscheidungshilfe für Datenmodellierung"
 />
 
 ---
@@ -771,6 +771,7 @@ db.orders.aggregate([
   }
 ]);
 ```
+
 
 <Text title="Ergebnis-Format">
   Liefert <HighlightedText>aggregierte Daten</HighlightedText> pro Kategorie mit Umsatz, Anzahl und Durchschnitt.
