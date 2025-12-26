@@ -40,6 +40,7 @@ chapter: 1
 ---
 title: Was ist MongoDB?
 subtitle: Definition und Kernkonzepte
+chapter: 1
 ---
 
 <DefinitionBox title="MongoDB" source="MongoDB Documentation 2024">
@@ -54,6 +55,7 @@ subtitle: Definition und Kernkonzepte
 ---
 title: Die MongoDB-Geschichte
 subtitle: Von Startup zur Enterprise-Lösung
+chapter: 1
 ---
 
 <NumberedList title="Entwicklungsmeilensteine">

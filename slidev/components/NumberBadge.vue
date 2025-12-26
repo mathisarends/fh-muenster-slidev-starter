@@ -22,14 +22,14 @@ defineProps({
 
 <template>
   <div
-    class="inline-flex items-center justify-center rounded-full font-semibold flex-shrink-0"
+    class="grid place-items-center rounded-full font-semibold flex-shrink-0 tabular-nums"
     :class="[
       {
         'bg-fh-orange text-white': active,
         'bg-gray-400 text-white': disabled,
         'bg-fh-dark-blue text-white': !active && !disabled
       },
-      size === 'sm' ? 'w-4 h-4 text-xs' : 'w-5.5 h-5.5 text-sm'
+      size === 'sm' ? 'w-4 h-4 text-[11px] leading-4' : 'w-5.5 h-5.5 text-sm leading-5.5'
     ]"
   >
     {{ number }}
