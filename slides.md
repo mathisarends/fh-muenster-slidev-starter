@@ -1,6 +1,8 @@
 ---
 theme: default
 highlighter: shiki
+favicon: /images/favicon.png
+title: MongoDB
 fonts:
   sans: 'Nunito Sans'
   serif: 'Nunito Sans'
@@ -170,7 +172,6 @@ subtitle: BSON und JSON im Vergleich
 
 <Columns>
 
-
 ```json
 {
   "name": "Max Mustermann",
@@ -194,34 +195,49 @@ subtitle: BSON und JSON im Vergleich
 
 </Columns>
 
-<HighlightBox title="BSON-Vorteile">
-  BSON erweitert JSON um zusätzliche Datentypen wie ObjectId, Date, Binary Data und NumberDecimal. Dies ermöglicht effiziente Speicherung und schnelle Traversierung von Dokumenten.
-</HighlightBox>
+<Text title="BSON-Vorteile">
+  BSON erweitert JSON um zusätzliche <HighlightedText>Datentypen</HighlightedText> wie ObjectId, Date, Binary Data und NumberDecimal.
+  <SubText>Dies ermöglicht effiziente Speicherung und schnelle Traversierung von Dokumenten</SubText>
+</Text>
 
 ---
 title: Embedded Documents vs. Referenzen
 subtitle: Datenmodellierungsstrategien
 ---
 
-<Table 
-  :headers="['Embedded Documents', 'Referenzen']"
-  :columnWidths="['50%', '50%']"
-  :rows="[
-    [
-      '<strong>Vorteile:</strong><br>• Bessere Read-Performance<br>• Ein Query für alle Daten<br>• Atomare Operationen<br>• Datenlokalität',
-      '<strong>Vorteile:</strong><br>• Kleinere Dokumente<br>• Weniger Daten-Duplikation<br>• Flexible Updates<br>• Vermeidung des 16MB Limits'
-    ],
-    [
-      '<strong>Anwendung:</strong><br>One-to-One und One-to-Few Beziehungen',
-      '<strong>Anwendung:</strong><br>One-to-Many und Many-to-Many Beziehungen'
-    ],
-    [
-      '<strong>Beispiel:</strong><br>Benutzer mit Adresse<br><code>{ user: {...}, address: {...} }</code>',
-      '<strong>Beispiel:</strong><br>Benutzer mit Bestellungen<br><code>{ user_id: ObjectId(...) }</code>'
-    ]
-  ]"
-  caption="Entscheidungshilfe für Datenmodellierung"
-/>
+<Columns>
+
+<div>
+
+<Text title="Embedded Documents">
+  Daten werden <HighlightedText>direkt im Dokument</HighlightedText> gespeichert.
+  <SubText>Bessere Read-Performance durch Datenlokalität</SubText>
+</Text>
+
+<BulletedList title="Vorteile">
+  <li>Ein Query für alle Daten</li>
+  <li>Atomare Operationen</li>
+  <li>Optimale Read-Performance</li>
+</BulletedList>
+
+</div>
+
+<div>
+
+<Text title="Referenzen">
+  Daten werden in <HighlightedText>separaten Collections</HighlightedText> gespeichert.
+  <SubText>Flexible Updates und vermeidet Duplikation</SubText>
+</Text>
+
+<BulletedList title="Vorteile">
+  <li>Kleinere Dokumente</li>
+  <li>Weniger Daten-Duplikation</li>
+  <li>Vermeidung des 16MB Limits</li>
+</BulletedList>
+
+</div>
+
+</Columns>
 
 ---
 title: Schema Design Patterns
@@ -332,8 +348,10 @@ title: Insert Operations
 subtitle: Dokumente erstellen
 ---
 
-```javascript {2-9|11-25}
-// insertOne - Einzelnes Dokument einfügen
+<Columns>
+
+```javascript
+// insertOne - Einzelnes Dokument
 db.users.insertOne({
   name: "Anna Schmidt",
   email: "anna@example.com",
@@ -341,28 +359,25 @@ db.users.insertOne({
   roles: ["user", "admin"],
   createdAt: new Date()
 });
+```
 
-// insertMany - Multiple Dokumente auf einmal
+```javascript
+// insertMany - Multiple Dokumente
 db.products.insertMany([
   {
     name: "Laptop",
     price: 999.99,
-    category: "Electronics",
-    inStock: true
+    category: "Electronics"
   },
   {
     name: "Maus",
     price: 24.99,
-    category: "Accessories",
-    inStock: true
+    category: "Accessories"
   }
 ]);
 ```
 
-<Text title="Wichtige Hinweise">
-  MongoDB generiert automatisch eine <HighlightedText>_id</HighlightedText> wenn keine angegeben wird.
-  <SubText>Die _id ist einzigartig innerhalb einer Collection und wird als ObjectId gespeichert</SubText>
-</Text>
+</Columns>
 
 ---
 title: Query Operations
@@ -462,34 +477,40 @@ title: Update Beispiele
 subtitle: Praktische Anwendung
 ---
 
-```javascript {1-4|6-11|13-17}
+<Columns>
+
+```javascript
 // Einzelnes Feld aktualisieren
 db.users.updateOne(
   { email: "max@example.com" },
   { $set: { lastLogin: new Date() } }
 );
 
-// Multiple Felder und Array-Operation
+// Multiple Felder
 db.products.updateMany(
   { category: "Electronics" },
-  { $set: { featured: true }, $inc: { views: 1 } }
+  { 
+    $set: { featured: true }, 
+    $inc: { views: 1 } 
+  }
 );
+```
 
-// Upsert - Update oder Insert wenn nicht vorhanden
+```javascript
+// Upsert - Update oder Insert
 db.settings.updateOne(
   { key: "theme" },
-  { $set: { value: "dark", updatedAt: new Date() } },
+  { 
+    $set: { 
+      value: "dark", 
+      updatedAt: new Date() 
+    } 
+  },
   { upsert: true }
 );
 ```
 
-<ExampleBox title="Praxis-Tipp: Upsert verwenden">
-  Die <HighlightedText>upsert</HighlightedText>-Option ist ideal für Konfigurationsdaten oder Caching-Szenarien. Sie vermeidet die Notwendigkeit, vor jedem Update zu prüfen, ob ein Dokument bereits existiert.
-</ExampleBox>
-
-<HighlightBox title="Atomare Operationen">
-  Alle Update-Operationen auf ein einzelnes Dokument sind in MongoDB atomar. Das bedeutet, dass entweder alle Änderungen angewendet werden oder keine.
-</HighlightBox>
+</Columns>
 
 ---
 layout: chapter-intro
@@ -685,9 +706,10 @@ subtitle: Leistungsstarke Datenverarbeitung
   Die Aggregation Pipeline ist ein Framework zur Datenverarbeitung, das Dokumente durch eine Reihe von Stages transformiert. Jede Stage führt eine Operation auf den Dokumenten aus und gibt das Ergebnis an die nächste Stage weiter.
 </DefinitionBox>
 
-<HighlightBox title="Pipeline-Konzept">
-  Ähnlich wie Unix Pipes: Daten fließen durch mehrere Verarbeitungsschritte, wobei jeder Schritt das Ergebnis des vorherigen transformiert. Dies ermöglicht komplexe Analysen mit lesbarem, zusammensetzbarem Code.
-</HighlightBox>
+<Text title="Pipeline-Konzept">
+  Ähnlich wie <HighlightedText>Unix Pipes</HighlightedText>: Daten fließen durch mehrere Verarbeitungsschritte.
+  <SubText>Jeder Schritt transformiert das Ergebnis des vorherigen - ermöglicht komplexe Analysen mit lesbarem Code</SubText>
+</Text>
 
 ---
 title: Wichtige Aggregation Stages
@@ -738,16 +760,12 @@ subtitle: Die Building Blocks der Pipeline
 />
 
 ---
-title: Aggregation Beispiel 1
+title: Aggregation Beispiel
 subtitle: Verkaufsstatistiken berechnen
 ---
 
-<ExampleBox title="Best Practice: Batch Inserts">
-  Verwenden Sie <HighlightedText>insertMany()</HighlightedText> statt mehrerer insertOne()-Aufrufe, um die Performance zu verbessern. MongoDB sendet dann nur eine Netzwerk-Anfrage statt mehrerer einzelner Requests.
-</ExampleBox>
-
-```javascript {1-3|4-9|10-14|15-17}
-// Gesamtumsatz pro Produkt-Kategorie berechnen
+```javascript {1-3|4-9|10-17|18-20}
+// Gesamtumsatz pro Produkt-Kategorie
 db.orders.aggregate([
   // Stage 1: Nur abgeschlossene Bestellungen
   {
@@ -756,7 +774,7 @@ db.orders.aggregate([
       orderDate: { $gte: ISODate("2024-01-01") }
     }
   },
-  // Stage 2: Nach Kategorie gruppieren und summieren
+  // Stage 2: Nach Kategorie gruppieren
   {
     $group: {
       _id: "$category",
@@ -766,12 +784,9 @@ db.orders.aggregate([
     }
   },
   // Stage 3: Nach Umsatz sortieren
-  {
-    $sort: { totalRevenue: -1 }
-  }
+  { $sort: { totalRevenue: -1 } }
 ]);
 ```
-
 
 <Text title="Ergebnis-Format">
   Liefert <HighlightedText>aggregierte Daten</HighlightedText> pro Kategorie mit Umsatz, Anzahl und Durchschnitt.
@@ -815,35 +830,6 @@ db.orders.aggregate([
   }
 ]);
 ```
-
----
-title: Aggregation Visualisierung
-subtitle: Pipeline-Datenfluss
----
-
-```mermaid
-graph TD
-    A[Alle Orders<br/>100.000 Dokumente] -->|$match| B[Filtered Orders<br/>5.000 Dokumente<br/>status: completed]
-    B -->|$lookup| C[Orders + Customer Data<br/>5.000 angereicherte Docs]
-    C -->|$unwind| D[Flattened Array<br/>5.000 Docs]
-    D -->|$group| E[Grouped by Category<br/>15 Kategorien]
-    E -->|$sort| F[Sorted Results<br/>Top Categories]
-    F -->|$limit| G[Final Output<br/>Top 5 Kategorien]
-    
-    style A fill:#e1f5ff
-    style B fill:#fff4e1
-    style C fill:#ffe1f5
-    style D fill:#e1ffe1
-    style E fill:#ffe1e1
-    style F fill:#f5e1ff
-    style G fill:#90EE90
-```
-
-<Text title="Pipeline-Effizienz">
-  Jede Stage reduziert die Datenmenge - <HighlightedText>$match früh platzieren</HighlightedText> für beste Performance.
-  <SubText>MongoDB optimiert die Pipeline automatisch, z.B. durch Verschieben von $match vor $sort</SubText>
-</Text>
-
 ---
 title: Analytics Dashboard
 subtitle: Komplexe Business-Anforderungen
@@ -920,26 +906,6 @@ subtitle: Literatur und Dokumentation
     { id: '[MonDB24c]', text: `MongoDB Inc.: <em>State of Developer Data Report.</em> https://www.mongodb.com/developer-data-report, 2023` }
   ]"
 ></CitationTable>
-
-
----
-title: Weitere Ressourcen
-subtitle: Online-Materialien und Tools
----
-
-<CitationTable 
-  title="Nützliche Links"
-  :citations="[
-    { id: 'MongoDB University', text: 'Kostenlose Online-Kurse und Zertifizierungen: <em>https://university.mongodb.com</em>' },
-    { id: 'MongoDB Compass', text: 'GUI-Tool für MongoDB: <em>https://www.mongodb.com/products/compass</em>' },
-    { id: 'MongoDB Atlas', text: 'Cloud-hosted MongoDB: <em>https://www.mongodb.com/cloud/atlas</em>' },
-    { id: 'Community Forum', text: 'MongoDB Community: <em>https://www.mongodb.com/community/forums</em>' }
-  ]"
-/>
-
-<HighlightBox title="Nächste Schritte">
-  MongoDB bietet umfangreiche Features wie Replica Sets, Sharding, Change Streams und Transactions. Die offizielle Dokumentation und MongoDB University bieten detaillierte Tutorials für fortgeschrittene Themen.
-</HighlightBox>
 
 ---
 layout: closing

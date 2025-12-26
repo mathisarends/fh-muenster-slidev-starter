@@ -33,9 +33,9 @@ const chapterTitle = computed(() => {
 
 const footerText = computed(() => {
   if (props.chapter && chapterTitle.value) {
-    return `${info.title} - ${info.subtitle} | ${chapterTitle.value}`
+    return `${info.title} | ${info.subtitle} | ${chapterTitle.value}`
   }
-  return `${info.title} - ${info.subtitle}`
+  return `${info.title} | ${info.subtitle}`
 })
 </script>
 
