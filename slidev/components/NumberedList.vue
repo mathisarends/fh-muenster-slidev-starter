@@ -33,7 +33,7 @@ const items = computed(() => {
 
     <ol class="list-none pl-0 space-y-3">
       <li v-for="(item, index) in items" :key="index" class="flex gap-3">
-        <div class="flex-shrink-0 pt-[0.15rem]">
+        <div class="flex-shrink-0 mt-1.5">
           <NumberBadge :number="start + index" :size="size" />
         </div>
         <div
