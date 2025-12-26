@@ -281,6 +281,10 @@ subtitle: Praktische Anwendung der Patterns
 }
 ```
 
+<ExampleBox title="Warum dieses Design?">
+  Dieses Modell kombiniert <HighlightedText>Embedding</HighlightedText> (Manufacturer, Specifications) mit <HighlightedText>Referenzen</HighlightedText> (Warehouse). Häufig abgerufene Daten sind eingebettet für schnellen Zugriff, während selten benötigte Details (vollständige Reviews) über Referenzen abgerufen werden.
+</ExampleBox>
+
 ---
 layout: chapter-intro
 chapter: 3
@@ -477,6 +481,10 @@ db.settings.updateOne(
 );
 ```
 
+<ExampleBox title="Praxis-Tipp: Upsert verwenden">
+  Die <HighlightedText>upsert</HighlightedText>-Option ist ideal für Konfigurationsdaten oder Caching-Szenarien. Sie vermeidet die Notwendigkeit, vor jedem Update zu prüfen, ob ein Dokument bereits existiert.
+</ExampleBox>
+
 <HighlightBox title="Atomare Operationen">
   Alle Update-Operationen auf ein einzelnes Dokument sind in MongoDB atomar. Das bedeutet, dass entweder alle Änderungen angewendet werden oder keine.
 </HighlightBox>
@@ -549,6 +557,9 @@ db.users.createIndex({ email: 1 });  // 1 = aufsteigend, -1 = absteigend
 // Compound Index für häufige Query-Kombination
 db.orders.createIndex({ customerId: 1, orderDate: -1 });
 
+// Index im Hintergrund erstellen (empfohlen für Production)
+db.users.createIndex({ email: 1 }, { background: true });
+
 // Unique Index für eindeutige Werte
 db.users.createIndex({ username: 1 }, { unique: true });
 
@@ -567,6 +578,10 @@ db.users.getIndexes();
 // Index löschen
 db.users.dropIndex("email_1");
 ```
+
+<ExampleBox title="Wann Partial Indexes verwenden?">
+  Partial Indexes sind ideal für große Collections, bei denen nur ein Teil der Dokumente häufig abgefragt wird. Sie sparen Speicherplatz und verbessern die Performance, da der Index nur relevante Dokumente enthält.
+</ExampleBox>
 
 ---
 title: Explain Plan
@@ -724,6 +739,10 @@ subtitle: Die Building Blocks der Pipeline
 title: Aggregation Beispiel 1
 subtitle: Verkaufsstatistiken berechnen
 ---
+
+<ExampleBox title="Best Practice: Batch Inserts">
+  Verwenden Sie <HighlightedText>insertMany()</HighlightedText> statt mehrerer insertOne()-Aufrufe, um die Performance zu verbessern. MongoDB sendet dann nur eine Netzwerk-Anfrage statt mehrerer einzelner Requests.
+</ExampleBox>
 
 ```javascript {1-3|4-9|10-14|15-17}
 // Gesamtumsatz pro Produkt-Kategorie berechnen
