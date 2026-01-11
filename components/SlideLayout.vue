@@ -27,7 +27,7 @@ provide('footnotes', footnotes)
 </script>
 
 <template>
-  <div class="h-full flex flex-col px-8 pt-4 pb-4 bg-white relative">
+  <div class="h-full flex flex-col px-8 pt-3 pb-4 bg-white relative">
     <div class="flex justify-between items-start mb-1.5">
       <Title :title="props.title" :subtitle="props.subtitle" />
       <Logo />
