@@ -1,28 +1,30 @@
 <script setup>
 import { computed } from 'vue'
-import CitationTable from '@components/CitationTable.vue'
+import Table from '@components/Table.vue'
 import { useFigures } from '@composables/useFigures'
 
 defineProps({
   title: {
     type: String,
     default: 'Abbildungsverzeichnis'
-  },
-  idWidth: {
-    type: String,
-    default: '120px'
   }
 })
 
 const { getFigures } = useFigures()
-const figures = computed(() =>
-  getFigures().map((figure, index) => ({
-    id: `Abb. ${index + 1}`,
-    text: `<div>${figure.caption}</div>${figure.source ? `<div class="text-gray-500 italic text-xs mt-1">${figure.source}</div>` : ''}`
-  }))
+
+const rows = computed(() =>
+  getFigures().map((figure, index) => [
+    `Abb. ${index + 1}`,
+    figure.caption,
+    figure.source ? `<span class="italic">${figure.source}</span>` : '–'
+  ])
 )
 </script>
 
 <template>
-  <CitationTable :title="title" :citations="figures" :id-width="idWidth" />
+  <Table
+    :headers="['Nr.', 'Beschreibung', 'Quelle']"
+    :columnWidths="['80px', '1fr', '200px']"
+    :rows="rows"
+  />
 </template>

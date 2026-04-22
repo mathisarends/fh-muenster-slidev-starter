@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { reactive, ref, computed, nextTick } from 'vue'
 
 interface Figure {
   id: string
@@ -6,47 +6,49 @@ interface Figure {
   alt: string
   caption: string
   source: string
-  number: number
 }
 
-const figuresMap = ref<Map<string, Figure>>(new Map())
+const figures = reactive(new Map<string, Figure>())
+const figureNumbers = ref(new Map<string, number>())
+
+function recalculateNumbers() {
+  nextTick(() => {
+    const els = document.querySelectorAll('[data-figure-id]')
+    const newNumbers = new Map<string, number>()
+    els.forEach((el, index) => {
+      const id = el.getAttribute('data-figure-id')
+      if (id) newNumbers.set(id, index + 1)
+    })
+    figureNumbers.value = newNumbers
+  })
+}
 
 export const useFigures = () => {
-  const registerFigure = (uniqueId: string, figure: Omit<Figure, 'id' | 'number'>) => {
-    const existing = figuresMap.value.get(uniqueId)
-    if (existing) {
-      return { id: existing.id, number: existing.number }
+  const registerFigure = (uniqueId: string, figure: Omit<Figure, 'id'>) => {
+    if (!figures.has(uniqueId)) {
+      figures.set(uniqueId, { id: uniqueId, ...figure })
     }
+    recalculateNumbers()
 
-    const number = figuresMap.value.size + 1
-    const id = `fig-${number}`
-
-    const newFigure: Figure = {
-      id,
-      ...figure,
-      number
-    }
-
-    figuresMap.value.set(uniqueId, newFigure)
-    return { id, number }
+    return computed(() => ({
+      id: uniqueId,
+      number: figureNumbers.value.get(uniqueId) ?? 0
+    }))
   }
 
   const getFigures = () => {
-    return Array.from(figuresMap.value.values()).sort((a, b) => a.number - b.number)
+    const els = document.querySelectorAll('[data-figure-id]')
+    return Array.from(els)
+      .map(el => figures.get(el.getAttribute('data-figure-id')!))
+      .filter(Boolean) as Figure[]
   }
 
   const clearFigures = () => {
-    figuresMap.value.clear()
+    figures.clear()
+    figureNumbers.value = new Map()
   }
 
-  const hasFigure = (uniqueId: string) => {
-    return figuresMap.value.has(uniqueId)
-  }
+  const hasFigure = (uniqueId: string) => figures.has(uniqueId)
 
-  return {
-    registerFigure,
-    getFigures,
-    clearFigures,
-    hasFigure
-  }
+  return { registerFigure, getFigures, clearFigures, hasFigure }
 }
