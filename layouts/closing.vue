@@ -10,7 +10,7 @@ const info = $slidev.configs?.presentationInfo || { authors: [] }
     <CoverBackdrop variant="closing" />
 
     <div class="relative z-10 flex flex-col h-full">
-      <CoverLogo :department="false" />
+      <CoverLogo />
 
       <div class="flex-1 flex flex-col justify-center -mt-8">
         <h1 class="text-[5.5rem] leading-[0.95] font-black text-fh-navy tracking-tight mb-5">
