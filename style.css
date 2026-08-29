@@ -1,3 +1,11 @@
+:root {
+  --slide-padding-x: 2.5rem;
+}
+
+.slide-padding-x {
+  padding-inline: var(--slide-padding-x);
+}
+
 .slidev-code,
 .slidev-code pre,
 pre.shiki {

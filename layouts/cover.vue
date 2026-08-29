@@ -11,7 +11,7 @@ const info = $slidev.configs?.presentationInfo || {
 </script>
 
 <template>
-  <div class="h-full bg-white relative overflow-hidden flex flex-col px-16 pt-12 pb-14">
+  <div class="slide-padding-x h-full bg-white relative overflow-hidden flex flex-col pt-12 pb-14">
     <CoverBackdrop variant="cover" />
 
     <div class="relative z-10 flex flex-col h-full">
