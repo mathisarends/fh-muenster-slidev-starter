@@ -35,7 +35,6 @@ Edit [slides.md](./slides.md) to create your presentation.
   </tr>
   <tr>
     <td><img src="public/demo/outline.png" alt="Chapter Outline" width="300"/></td>
-    <td><img src="public/demo/sources.png" alt="Citation Table" width="300"/></td>
   </tr>
 </table>
 
@@ -50,7 +49,6 @@ Edit [slides.md](./slides.md) to create your presentation.
 - **`<BulletedList>`** - Unordered lists with FH styling (supports nesting up to 3 levels)
 - **`<NumberedList>`** - Ordered lists with numbered badges
 - **`<Text>`** - Paragraph content with optional section title
-- **`<CitationTable>`** - Bibliography and reference lists
 
 ### Typography Components
 - **`<HighlightedText>`** - Emphasized text in FH orange

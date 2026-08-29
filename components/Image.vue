@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useFigures } from '../composables/useFigures'
-
-const props = defineProps({
+defineProps({
   title: { type: String, default: '' },
   src: { type: String, required: true },
   alt: { type: String, default: '' },
@@ -10,35 +7,14 @@ const props = defineProps({
   source: { type: String, default: '' },
   width: { type: String, default: 'auto' },
   maxWidth: { type: String, default: '100%' },
-  figureId: { type: String, default: '' },
   height: { type: String, default: 'auto' },
   captionAlign: { type: String as () => 'left' | 'center' | 'right', default: 'left' }
 })
-
-const { registerFigure } = useFigures()
-
-const uniqueId = computed(() => {
-  if (props.figureId) {
-    return props.figureId
-  }
-  return `fig-${props.src.replace(/[^a-zA-Z0-9]/g, '-')}`
-})
-
-const figureInfo =
-  props.caption || props.source
-    ? registerFigure(uniqueId.value, {
-        src: props.src,
-        alt: props.alt || '',
-        caption: props.caption || '',
-        source: props.source || ''
-      })
-    : null
 </script>
 
 <template>
   <figure
     class="image-figure"
-    :data-figure-id="caption || source ? uniqueId : undefined"
     :style="{ maxWidth: maxWidth }"
   >
     <img
@@ -48,7 +24,6 @@ const figureInfo =
       :style="height !== 'auto' ? { maxHeight: height } : {}"
     />
     <figcaption v-if="caption || source" class="image-caption" :style="{ textAlign: captionAlign }">
-      <span v-if="figureInfo" class="figure-number">Abb. {{ figureInfo.number }}: </span>
       <span v-if="caption">{{ caption }}</span>
       <span v-if="source" class="figure-source"> (Quelle: {{ source }})</span>
     </figcaption>
@@ -86,9 +61,6 @@ const figureInfo =
   flex-shrink: 0;
 }
 
-.figure-number {
-  font-weight: 600;
-}
 .figure-source {
   font-style: italic;
 }

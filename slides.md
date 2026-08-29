@@ -277,18 +277,5 @@ db.orders.aggregate([
 ```
 
 ---
-title: Quellen
-subtitle: Literatur und Dokumentation
----
-
-<CitationTable 
-  :citations="[
-    { id: '[Chod15]', text: 'Chodorow, K.: <em>MongoDB: The Definitive Guide.</em> 3rd Edition, O\'Reilly Media, 2015' },
-    { id: '[Brad19]', text: 'Bradshaw, S.; Brazil, E.; Chodorow, K.: <em>MongoDB: The Definitive Guide.</em> 3rd Edition, O\'Reilly Media, 2019' },
-    { id: '[MonDB24a]', text: 'MongoDB Inc.: <em>MongoDB Manual.</em> Version 7.0, https://docs.mongodb.com/manual/, 2024' }
-  ]"
-/>
-
----
 layout: closing
 ---
