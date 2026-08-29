@@ -8,12 +8,13 @@ defineProps({
 </script>
 
 <template>
-  <h3 class="text-fh-dark-blue text-lg font-medium">
+  <h3 class="section-title mb-0.75 text-[1.18rem] leading-[1.2] font-normal tracking-[-0.012em]">
     <slot>{{ text }}</slot>
   </h3>
 </template>
-3
 
 <style scoped>
-/* Keine Unterstreichung */
+.section-title {
+  color: #00549a;
+}
 </style>

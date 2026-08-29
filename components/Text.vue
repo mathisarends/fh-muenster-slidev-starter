@@ -13,7 +13,7 @@ defineProps({
   <div class="text-content">
     <SectionTitle v-if="title" :text="title" />
 
-    <div class="text-gray-700 leading-relaxed text-sm space-y-1">
+    <div class="text-[1rem] leading-[1.48] text-gray-800">
       <slot />
     </div>
   </div>

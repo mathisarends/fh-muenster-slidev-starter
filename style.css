@@ -13,3 +13,7 @@ pre.shiki {
   font-size: 0.8em !important;
   border-radius: 7.5px !important;
 }
+
+.text-content + .bulleted-list {
+  margin-top: 0.45rem;
+}

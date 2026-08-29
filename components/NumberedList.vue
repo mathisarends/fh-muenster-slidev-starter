@@ -31,13 +31,13 @@ const items = computed(() => {
   <div>
     <SectionTitle v-if="title" :text="title" />
 
-    <ol class="list-none pl-0 space-y-3">
+    <ol class="list-none pl-0 space-y-2.5">
       <li v-for="(item, index) in items" :key="index" class="flex gap-3">
         <div class="flex-shrink-0 mt-1.5">
           <NumberBadge :number="start + index" :size="size" />
         </div>
         <div
-          class="flex-1 text-gray-800 leading-relaxed text-base [&_.subtext]:block [&_.subtext]:text-gray-400 [&_.subtext]:text-sm [&_.subtext]:mt-1 [&_.subtext]:leading-relaxed"
+          class="flex-1 text-[1rem] leading-[1.4] text-gray-800 [&_.subtext]:mt-0.5 [&_.subtext]:block [&_.subtext]:text-[0.88rem] [&_.subtext]:leading-[1.38] [&_.subtext]:text-gray-500"
         >
           <component :is="item" />
         </div>
